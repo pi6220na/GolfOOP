@@ -15,6 +15,7 @@ public class Card {
     private String facing;
 
 
+    // setup constructor
     public Card(int sequence, String rank, String suit){
 
         this.sequence = sequence;       // 1=Ace... 13=King
@@ -23,20 +24,14 @@ public class Card {
         this.facing = DOWN;             // card is facing down to start
     }
 
+    // constructor used by scoring method
     public Card(int sequence, String rank, String suit, String facing){
 
         this.sequence = sequence;       // 1=Ace... 13=King
         this.rank = rank;               // A, 2, 3,... J, Q, K
         this.suit = suit;               // Hearts=H, Clubs=C, Diamonds=D, Spades=S
-        this.facing = facing;             // card is facing down to start
+        this.facing = facing;           // UP or DOWN
     }
-
-
-
-
-
-
-
 
     static String HEARTS = "H";
     static String CLUBS = "C";
@@ -170,7 +165,7 @@ public class Card {
     }
 
 
-// getters and one needed setter
+// getters and setters
 
     public int getSequence() {
         return sequence;

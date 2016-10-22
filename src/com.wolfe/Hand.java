@@ -72,7 +72,7 @@ public class Hand {
     }
 
 
-    // during game play, show partial score of up cards. this method determines the up score.
+    // during game play, show partial score of up cards. this method determines the up cards score.
     int scoreUpCards() {
 
         ArrayList<Card> workArray = new ArrayList<Card>();
@@ -86,7 +86,7 @@ public class Hand {
 
         }
 
-
+/*
         System.out.println("handArray");
         for (Card card : handArray) {
 
@@ -108,23 +108,20 @@ public class Hand {
             System.out.println();
 
         }
-
-
-
-
+*/
 
         // if card is facing down, set it to 0 ignore it
         for (Card card : workArray) {
 
-            System.out.println("test b4: card seq = " + card.getSequence());
-            System.out.println(" card facing: " + card.getFacing());
+            //System.out.println("test b4: card seq = " + card.getSequence());
+            //System.out.println(" card facing: " + card.getFacing());
 
             if (card.getFacing().equals(DOWN)) {
                 card.setSequence(0);
             }
 
-            System.out.println("test after: card seq = " + card.getSequence());
-            System.out.println(" card facing: " + card.getFacing());
+            //System.out.println("test after: card seq = " + card.getSequence());
+            //System.out.println(" card facing: " + card.getFacing());
 
         }
 
@@ -147,8 +144,8 @@ public class Hand {
         for (Card card : workArray) {
             int workCard = card.getSequence();
             score += calcScore(workCard);
-            System.out.println("test: workCard = " + workCard);
-            System.out.println("test: score = " + score);
+            //System.out.println("test: workCard = " + workCard);
+            //System.out.println("test: score = " + score);
         }
 
         return score;
@@ -231,10 +228,8 @@ public class Hand {
         if (handArray.get(row2Right).getFacing().equals(UP)) System.out.println(handArray.get(row2Right) + " ");
         else System.out.println("xx");
 
-        //int test = scoreUpCards();
-        //System.out.println("Score for up cards = " + test);
-
     }
+
 
     @Override
     public String toString() {

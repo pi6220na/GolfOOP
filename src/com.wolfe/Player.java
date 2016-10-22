@@ -57,6 +57,8 @@ public class Player {
 
             printAllPlayerHands(players);
 
+            Deck.printPlayerDrawsFrom();
+
 
         }
 
@@ -74,7 +76,6 @@ public class Player {
             player.hand.printHand(player.name, player.playerType);
             int test = player.hand.scoreUpCards();
             System.out.println("Score for up cards = " + test);
-
 
         }
 
@@ -102,5 +103,12 @@ public class Player {
 
     }
 
+    public void turnUpTwo() {
+
+    }
+
+    public void drawACard() {
+
+    }
 }
 // end class Player

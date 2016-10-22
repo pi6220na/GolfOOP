@@ -97,17 +97,9 @@ public class GolfManager {
 
             player.turnUpTwo();
 
-/*
-            if (player instanceof Computer) {
-                System.out.println("This player is a computer");
-                player.dealCards();
-            }
+            Card discard = Deck.getACard();
+            Deck.discardPile.push(discard);
 
-            if (player instanceof Human) {
-                System.out.println("This player is a human");
-                player.dealCards();
-            }
-*/
         }
 
     }

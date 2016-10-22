@@ -5,9 +5,6 @@ package com.wolfe;
  */
 public class Human extends Player {
 
-    static String COMPUTER = "C";
-    static String HUMAN = "H";
-
 
     public Human(int playerIndex, String name, String playerType) {
         super(playerIndex, name, playerType);
@@ -45,5 +42,8 @@ public class Human extends Player {
         hand.printHand(name, playerType);
     }
 
+    public void drawACard() {
+
+    }
 
 }

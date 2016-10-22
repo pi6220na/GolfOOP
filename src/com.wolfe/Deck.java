@@ -2,6 +2,7 @@ package com.wolfe;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 
 /**
  * Created by Jeremy on 10/11/2016.
@@ -21,6 +22,7 @@ public class Deck {
 
     //static HashMap<Integer,Card> deck = new TreeMap<>();
     static ArrayList<Card> deck = new ArrayList<>();
+    static LinkedList<Card> discardPile = new LinkedList<>();   // stack
 
     public static void buildDeck() {
         for (int i = 1; i < 14; i++) {
@@ -57,6 +59,17 @@ public class Deck {
         }
         System.out.println();
     }
+
+    static void printPlayerDrawsFrom() {
+        System.out.println("*******      *******************");
+        System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peek());
+        System.out.println("*******      *******************");
+    }
+
+
+
+
+
 
     static void printVerboseDeck() {
 

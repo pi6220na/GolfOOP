@@ -15,9 +15,6 @@ public class Computer extends Player {
     Random random = new Random();
 
 
-    static String COMPUTER = "C";
-    static String HUMAN = "H";
-
     public Computer(int playerIndex, String name, String playerType) {
         super(playerIndex, name, playerType);
 
@@ -41,6 +38,10 @@ public class Computer extends Player {
         hand.handArray.get(rand2).setFacing(UP);
 
         hand.printHand(name, playerType);
+
+    }
+
+    public void drawACard() {
 
     }
 }
