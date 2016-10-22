@@ -72,8 +72,146 @@ public class Hand {
     }
 
 
+    // during game play, show partial score of up cards. this method determines the up score.
+    int scoreUpCards() {
+
+        ArrayList<Card> workArray = new ArrayList<Card>();
+
+        for (Card card : handArray) {
+
+            Card newcard = new Card(card.getSequence(), card.getRank(),
+                    card.getSuit(), card.getFacing());
+
+            workArray.add(newcard);
+
+        }
+
+
+        System.out.println("handArray");
+        for (Card card : handArray) {
+
+            System.out.println(card.getSequence());
+            System.out.println(card.getRank());
+            System.out.println(card.getSuit());
+            System.out.println(card.getFacing());
+            System.out.println();
+
+        }
+
+        System.out.println("workArray");
+        for (Card card : workArray) {
+
+            System.out.println(card.getSequence());
+            System.out.println(card.getRank());
+            System.out.println(card.getSuit());
+            System.out.println(card.getFacing());
+            System.out.println();
+
+        }
+
+
+
+
+
+        // if card is facing down, set it to 0 ignore it
+        for (Card card : workArray) {
+
+            System.out.println("test b4: card seq = " + card.getSequence());
+            System.out.println(" card facing: " + card.getFacing());
+
+            if (card.getFacing().equals(DOWN)) {
+                card.setSequence(0);
+            }
+
+            System.out.println("test after: card seq = " + card.getSequence());
+            System.out.println(" card facing: " + card.getFacing());
+
+        }
+
+        // set pairs to zero value
+        if (workArray.get(row1Left).getSequence() == workArray.get(row2Left).getSequence()) {
+            workArray.get(row1Left).setSequence(0);
+            workArray.get(row2Left).setSequence(0);
+        }
+        if (workArray.get(row1Mid).getSequence() == workArray.get(row2Mid).getSequence()) {
+            workArray.get(row1Mid).setSequence(0);
+            workArray.get(row2Mid).setSequence(0);
+        }
+        if (workArray.get(row1Right).getSequence() == workArray.get(row2Right).getSequence()) {
+            workArray.get(row1Right).setSequence(0);
+            workArray.get(row2Right).setSequence(0);
+        }
+
+        // now scan each card and sum up values
+        int score = 0;
+        for (Card card : workArray) {
+            int workCard = card.getSequence();
+            score += calcScore(workCard);
+            System.out.println("test: workCard = " + workCard);
+            System.out.println("test: score = " + score);
+        }
+
+        return score;
+    }
+
+    private int calcScore(int workCard) {
+
+        int score = 0;
+
+        switch (workCard) {
+            case 0:
+                score = 0;
+                break;
+            case 1:
+                score = 1;
+                break;
+            case 2:
+                score = -2;
+                break;
+            case 3:
+                score = 3;
+                break;
+            case 4:
+                score = 4;
+                break;
+            case 5:
+                score = 5;
+                break;
+            case 6:
+                score = 6;
+                break;
+            case 7:
+                score = 7;
+                break;
+            case 8:
+                score = 8;
+                break;
+            case 9:
+                score = 9;
+                break;
+            case 10:
+                score = 10;
+                break;
+            case 11:
+                score = 10;
+                break;
+            case 12:
+                score = 10;
+                break;
+            case 13:
+                score = 0;
+                break;
+            default:
+                System.out.println("error in scoring routine");
+        }
+
+        return score;
+    }
+
+
     protected void printHand(String name, String playerType) {
 
+        System.out.println();
         System.out.println("entering printHand - ");
         System.out.println("Player: " + name + " Player Type: " + playerType);
 
@@ -92,6 +230,9 @@ public class Hand {
         else System.out.print("xx ");
         if (handArray.get(row2Right).getFacing().equals(UP)) System.out.println(handArray.get(row2Right) + " ");
         else System.out.println("xx");
+
+        //int test = scoreUpCards();
+        //System.out.println("Score for up cards = " + test);
 
     }
 

@@ -23,6 +23,21 @@ public class Card {
         this.facing = DOWN;             // card is facing down to start
     }
 
+    public Card(int sequence, String rank, String suit, String facing){
+
+        this.sequence = sequence;       // 1=Ace... 13=King
+        this.rank = rank;               // A, 2, 3,... J, Q, K
+        this.suit = suit;               // Hearts=H, Clubs=C, Diamonds=D, Spades=S
+        this.facing = facing;             // card is facing down to start
+    }
+
+
+
+
+
+
+
+
     static String HEARTS = "H";
     static String CLUBS = "C";
     static String DIAMONDS = "D";
@@ -172,5 +187,7 @@ public class Card {
     public String getFacing() { return facing; }
 
     public void setFacing(String facing) { this.facing = facing; }
+
+    public void setSequence(int sequence)  { this.sequence = sequence; }
 
 }

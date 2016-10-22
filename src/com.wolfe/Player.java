@@ -2,22 +2,15 @@ package com.wolfe;
 
 import java.util.*;
 
-import static com.wolfe.GolfManager.players;
-
-
 /**
  * Created by Jeremy on 10/20/2016.
  *
  * A Player can be either Human or Computer depending on how it's extended
  *
  * This class will:
- *      - get player name and type of player
- *      - ask another player for a card
- *      - check for requested matching card
- *      - if no matching card, draw a card from pool
- *      - accept matching card(s) and put in hand
- *      - check for books at end of each round
- *      - take another turn if appropriate
+ *
+ *
+ *
  *
  */
 public class Player {
@@ -42,6 +35,8 @@ public class Player {
     protected String name;        // name
     protected String playerType;  // a player can be human driven or computer driven
     protected Hand hand;        // the player's hand of cards
+    protected int score;        // accumulated score for each round
+    protected int scoreRound;   // score for hand during round
 
     // constructor
     public Player(int playerIndex, String name, String playerType) {
@@ -61,6 +56,8 @@ public class Player {
         for (Player player : players) {
 
             printAllPlayerHands(players);
+
+
         }
 
         System.out.println();
@@ -75,6 +72,9 @@ public class Player {
         for (Player player : players) {
 
             player.hand.printHand(player.name, player.playerType);
+            int test = player.hand.scoreUpCards();
+            System.out.println("Score for up cards = " + test);
+
 
         }
 
@@ -96,31 +96,11 @@ public class Player {
     public void dealCards() {
 
         hand = new Hand();
-
         hand.buildNewHand();
-
-        //hand.handArray.get(0).setFacing(UP);
-        //System.out.println(hand.handArray.get(0).getFacing());
-        //hand.handArray.get(1).setFacing(UP);
-        //System.out.println(hand.handArray.get(1).getFacing());
-        //hand.handArray.get(2).setFacing(UP);
-        //System.out.println(hand.handArray.get(2).getFacing());
-        //hand.handArray.get(3).setFacing(UP);
-        //System.out.println(hand.handArray.get(3).getFacing());
-        //hand.handArray.get(4).setFacing(UP);
-        //System.out.println(hand.handArray.get(4).getFacing());
-        //hand.handArray.get(5).setFacing(UP);
-        //System.out.println(hand.handArray.get(5).getFacing());
 
         hand.printHand(name, playerType);
 
     }
-
-    public void turnUpTwo() {
-
-
-    }
-
 
 }
 // end class Player
