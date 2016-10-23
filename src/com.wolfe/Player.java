@@ -67,11 +67,6 @@ public class Player {
 
         //}
 
-        System.out.println();
-        GolfManager.numberOfRoundsPlayed++;
-        System.out.println("played test round #" + GolfManager.numberOfRoundsPlayed);
-        return;
-
     }
 
     private void printAllPlayerHands(ArrayList<Player> players) {

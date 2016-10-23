@@ -52,13 +52,6 @@ public class Deck {
         return null;
     }
 
-    static void printDeck() {
-
-        for ( Card card : deck ) {
-            System.out.print(card.getRank() + card.getSuit() + " ");
-        }
-        System.out.println();
-    }
 
     static void printPlayerDrawsFrom() {
         System.out.println("*******      *******************");
@@ -68,8 +61,13 @@ public class Deck {
 
 
 
+    static void printDeck() {
 
-
+        for ( Card card : deck ) {
+            System.out.print(card.getRank() + card.getSuit() + " ");
+        }
+        System.out.println();
+    }
 
     static void printVerboseDeck() {
 

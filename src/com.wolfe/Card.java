@@ -38,6 +38,7 @@ public class Card {
     static String DIAMONDS = "D";
     static String SPADES = "S";
 
+    // text coloring code from Java MCTC Class
     static char spadeCh = 9824;  // Unicode characters for playing card symbols
     static char clubCh = 9827;
     static char heartCh = 9829;

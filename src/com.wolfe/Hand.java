@@ -84,14 +84,9 @@ public class Hand {
         drawnCard.setFacing(UP);
         handArray.set(location, drawnCard);
 
-
-
         System.out.println("swapCard: retCard = " + retCard);
         return retCard;
     }
-
-
-
 
 
     // during game play, show partial score of up cards. this method determines the up cards score.
@@ -234,20 +229,20 @@ public class Hand {
         System.out.println("entering printHand - ");
         System.out.println("Player: " + name + " Player Type: " + playerType);
 
-        System.out.println("0  1  2");
-        if (handArray.get(row1Left).getFacing().equals(UP)) System.out.print(handArray.get(row1Left) + " ");
-        else System.out.print("xx ");
-        if (handArray.get(row1Mid).getFacing().equals(UP)) System.out.print(handArray.get(row1Mid) + " ");
-        else System.out.print("xx ");
-        if (handArray.get(row1Right).getFacing().equals(UP)) System.out.println(handArray.get(row1Right) + " ");
+        System.out.println("0    1    2");
+        if (handArray.get(row1Left).getFacing().equals(UP)) System.out.print(handArray.get(row1Left) + "  ");
+        else System.out.print("xx   ");
+        if (handArray.get(row1Mid).getFacing().equals(UP)) System.out.print(handArray.get(row1Mid) + "  ");
+        else System.out.print("xx   ");
+        if (handArray.get(row1Right).getFacing().equals(UP)) System.out.println(handArray.get(row1Right) + "  ");
         else System.out.println("xx");
 
-        System.out.println("3  4  5");
-        if (handArray.get(row2Left).getFacing().equals(UP)) System.out.print(handArray.get(row2Left) + " ");
-        else System.out.print("xx ");
-        if (handArray.get(row2Mid).getFacing().equals(UP)) System.out.print(handArray.get(row2Mid) + " ");
-        else System.out.print("xx ");
-        if (handArray.get(row2Right).getFacing().equals(UP)) System.out.println(handArray.get(row2Right) + " ");
+        System.out.println("3    4    5");
+        if (handArray.get(row2Left).getFacing().equals(UP)) System.out.print(handArray.get(row2Left) + "  ");
+        else System.out.print("xx   ");
+        if (handArray.get(row2Mid).getFacing().equals(UP)) System.out.print(handArray.get(row2Mid) + "  ");
+        else System.out.print("xx   ");
+        if (handArray.get(row2Right).getFacing().equals(UP)) System.out.println(handArray.get(row2Right) + "  ");
         else System.out.println("xx");
 
     }

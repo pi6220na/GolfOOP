@@ -71,9 +71,12 @@ public class GolfManager {
             } while (!allCardsUp);
 
 
+            System.out.println();
+            GolfManager.numberOfRoundsPlayed++;
+            System.out.println("played test round #" + GolfManager.numberOfRoundsPlayed);
+
+
         } while (numberOfRoundsPlayed < 2);
-
-
 
 
         System.out.println();
@@ -98,10 +101,10 @@ public class GolfManager {
 
             player.turnUpTwo();
 
-            Card discard = Deck.getACard();
-            Deck.discardPile.push(discard);
-
         }
+
+        Card discard = Deck.getACard();
+        Deck.discardPile.push(discard);
 
     }
 
@@ -115,13 +118,11 @@ public class GolfManager {
         int pCount;
         int playerIndex = 0;
 
-        pCount = Validation.intInput("Enter the number of players (2 thru 4): ");
-        while (pCount < 2 || pCount > 4) {
+        numberOfPlayers = Validation.intInput("Enter the number of players (2 thru 4): ");
+        while (numberOfPlayers < 2 || numberOfPlayers > 4) {
             System.out.println("Input error, wrong number of players.");
             pCount = Validation.intInput("Enter the number of players (2 thru 4): ");
         }
-
-        numberOfPlayers = pCount;
 
         do {
 
