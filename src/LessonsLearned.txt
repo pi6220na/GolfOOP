@@ -1,0 +1,34 @@
+Lessons Learned from Project One
+
+
+
+
+
+Questions remaining:
+
+
+Using the sub-class type to instantiate a new object:
+Human human = new Human(playerIndex, name, HUMAN);
+versus
+Player player = new Human(playerIndex, name, HUMAN);
+didn't seem to make any difference in function...
+
+
+Needed empty methods/method signatures in super-class as well as sub-class
+
+
+
+Doing the following "copy" didn't work. The cards were copied but
+seemed to be references back to the originating array...
+ArrayList<Card> workArray = new ArrayList<Card>(handArray);
+
+This does work...
+ArrayList<Card> workArray = new ArrayList<Card>();
+
+        for (Card card : handArray) {
+
+            Card newcard = new Card(card.getSequence(), card.getRank(),
+                    card.getSuit(), card.getFacing());
+
+            workArray.add(newcard);
+
