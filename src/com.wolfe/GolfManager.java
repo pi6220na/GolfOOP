@@ -52,6 +52,7 @@ public class GolfManager {
             // inner play loop. Pulls a player from front of queue and puts into play.
             // Returns player to back of queue at end of turn.
             // round continues until a player has turned up all six table cards.
+            System.out.println("****** Start of Round ******");
             do {
 
                 int playerIndex = playerPlaysQueue.pop(); // get next player from queue
@@ -65,7 +66,7 @@ public class GolfManager {
                 playerPlaysQueue.add(playerIndex); // put player back to end of queue
 
 
-                allCardsUp = true;  // development only code:
+//                allCardsUp = true;  // development only code:
 
             } while (!allCardsUp);
 

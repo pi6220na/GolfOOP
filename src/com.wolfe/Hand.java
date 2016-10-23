@@ -72,6 +72,28 @@ public class Hand {
     }
 
 
+    protected Card swapCard(String choice, Card drawnCard) {
+
+        int location = Integer.parseInt(choice);
+        System.out.println("swapCard: location = " + location);
+        System.out.println("swapCard: drawnCard = " + drawnCard);
+
+
+        Card retCard = handArray.get(location);
+
+        drawnCard.setFacing(UP);
+        handArray.set(location, drawnCard);
+
+
+
+        System.out.println("swapCard: retCard = " + retCard);
+        return retCard;
+    }
+
+
+
+
+
     // during game play, show partial score of up cards. this method determines the up cards score.
     int scoreUpCards() {
 

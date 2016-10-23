@@ -51,16 +51,21 @@ public class Player {
     public void playRound(ArrayList<Player> players) {
 
         System.out.println();
-        System.out.println("****** Play a Round ******");
+        System.out.println("****** Play a Turn ****** Player " + name);
 
-        for (Player player : players) {
+        //for (Player player : players) {
 
             printAllPlayerHands(players);
 
             Deck.printPlayerDrawsFrom();
 
+            drawACard();
 
-        }
+            printAllPlayerHands(players);
+
+            Deck.printPlayerDrawsFrom();
+
+        //}
 
         System.out.println();
         GolfManager.numberOfRoundsPlayed++;
