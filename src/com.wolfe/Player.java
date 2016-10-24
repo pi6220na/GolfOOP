@@ -13,7 +13,7 @@ import java.util.*;
  *
  *
  */
-public class Player {
+public abstract class Player {
 
     //Create two scanners, one for Strings, and one for numbers - int and float values.
 
@@ -53,19 +53,24 @@ public class Player {
         System.out.println();
         System.out.println("****** Play a Turn ****** Player " + name);
 
-        //for (Player player : players) {
 
-            printAllPlayerHands(players);
+        printAllPlayerHands(players);
+        Deck.printPlayerDrawsFrom();
 
-            Deck.printPlayerDrawsFrom();
+        drawACard();
 
-            drawACard();
+        checkCardUpStatus();
 
-            printAllPlayerHands(players);
+        if (GolfManager.allCardsUp) {
+            for (Player player : players) {
+            int turnScore = player.hand.scoreAllCards();
+            player.scoreRound += turnScore;
+            player.score += turnScore;
+            }
+        }
 
-            Deck.printPlayerDrawsFrom();
-
-        //}
+        printAllPlayerHands(players);
+        Deck.printPlayerDrawsFrom();
 
     }
 
@@ -88,7 +93,7 @@ public class Player {
 
     }
 
-    public void checkCardStatus() {
+    public void checkCardUpStatus() {
 
         GolfManager.allCardsUp = hand.checkCardStatus();
 
@@ -103,12 +108,10 @@ public class Player {
 
     }
 
-    public void turnUpTwo() {
+    public abstract void turnUpTwo();
 
-    }
 
-    public void drawACard() {
+    public abstract void drawACard();
 
-    }
-}
-// end class Player
+
+}// end class Player

@@ -63,11 +63,11 @@ public class Hand {
         for (Card card : handArray) {
 
             if (card.getFacing().equals(DOWN)) {
-                System.out.println("checkCardStatus returning false");
+                System.out.println("checkCardUpStatus returning false");
                 return false;
             }
         }
-        System.out.println("checkCardStatus returning true");
+        System.out.println("checkCardUpStatus returning true");
         return true;
     }
 
@@ -89,8 +89,20 @@ public class Hand {
     }
 
 
+    protected int scoreAllCards() {
+
+        for (Card card : handArray) {
+
+            card.setFacing(UP);
+
+        }
+
+        return scoreUpCards();
+    }
+
+
     // during game play, show partial score of up cards. this method determines the up cards score.
-    int scoreUpCards() {
+    protected int scoreUpCards() {
 
         ArrayList<Card> workArray = new ArrayList<Card>();
 

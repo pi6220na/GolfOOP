@@ -36,7 +36,6 @@ public class GolfManager {
 
     static LinkedList<Integer> playerPlaysQueue = new LinkedList<>();   // circular index list of players
     static ArrayList<Player> players = new ArrayList<>();               // list of player (superclass) objects
-    static int currentPlayerID;                                         // player currently active
 
     public static void main(String[] args) {
 
@@ -56,17 +55,12 @@ public class GolfManager {
             do {
 
                 int playerIndex = playerPlaysQueue.pop(); // get next player from queue
-                currentPlayerID = playerIndex;
                 Player currentPlayer = players.get(playerIndex);
 
                 currentPlayer.playRound(players);
 
-                currentPlayer.checkCardStatus();
-
                 playerPlaysQueue.add(playerIndex); // put player back to end of queue
 
-
-//                allCardsUp = true;  // development only code:
 
             } while (!allCardsUp);
 
@@ -74,6 +68,10 @@ public class GolfManager {
             System.out.println();
             GolfManager.numberOfRoundsPlayed++;
             System.out.println("played test round #" + GolfManager.numberOfRoundsPlayed);
+            for (Player player : players) {
+                System.out.println("Player: " + player.name + " round score: " + player.scoreRound);
+                System.out.println("Player: " + player.name + " total score: " + player.score);
+            }
 
 
         } while (numberOfRoundsPlayed < 2);
@@ -100,6 +98,8 @@ public class GolfManager {
             player.dealCards();
 
             player.turnUpTwo();
+
+            player.scoreRound = 0;
 
         }
 
