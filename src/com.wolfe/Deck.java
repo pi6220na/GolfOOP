@@ -25,6 +25,7 @@ public class Deck {
     static LinkedList<Card> discardPile = new LinkedList<>();   // stack
 
     public static void buildDeck() {
+        deck = new ArrayList<Card>();
         for (int i = 1; i < 14; i++) {
             String j = Card.convertSeqToRank(i);
             Card card1 = new Card(i, j, HEARTS);
@@ -55,7 +56,7 @@ public class Deck {
 
     static void printPlayerDrawsFrom() {
         System.out.println("*******      *******************");
-        System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peek());
+        System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peekLast());
         System.out.println("*******      *******************");
     }
 

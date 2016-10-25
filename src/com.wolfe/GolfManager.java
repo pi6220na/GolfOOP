@@ -103,8 +103,10 @@ public class GolfManager {
 
         }
 
+        Deck.discardPile.clear();
         Card discard = Deck.getACard();
         Deck.discardPile.push(discard);
+        System.out.println("GolfManager added card to discard pile");
 
     }
 

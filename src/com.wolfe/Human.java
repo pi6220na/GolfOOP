@@ -83,10 +83,12 @@ public class Human extends Player {
             Card returnedCard = hand.swapCard(choice, drawnCard);
 
             Deck.discardPile.push(returnedCard);
+            System.out.println("Human added swap card to discard pile");
         }
 
         if (choice.equalsIgnoreCase("d")) {
             Deck.discardPile.push(drawnCard);
+            System.out.println("Human added discard or deck card to discard pile");
         }
 
     }
