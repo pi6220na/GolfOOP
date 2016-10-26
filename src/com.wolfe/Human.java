@@ -2,6 +2,9 @@ package com.wolfe;
 
 /*
  * Created by Jeremy on 10/20/2016.
+ *
+ * Gets input data from Human player and plays the cards based on the input.
+ *
  */
 public class Human extends Player {
 

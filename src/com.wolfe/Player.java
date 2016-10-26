@@ -7,10 +7,8 @@ import java.util.*;
  *
  * A Player can be either Human or Computer depending on how it's extended
  *
- * This class will:
- *
- *
- *
+ * This class will perform the basic player plays a hand logic by calling the
+ * appropriate sub class (Human or Computer).
  *
  */
 abstract class Player {
@@ -20,8 +18,8 @@ abstract class Player {
     //Use this scanner to read text data that will be stored in String variables
     static final Scanner stringScanner = new Scanner(System.in);
 
-    static String COMPUTER = "C";
-    static String HUMAN = "H";
+    static final String COMPUTER = "C";
+    static final String HUMAN = "H";
 
 
     final String name;        // name

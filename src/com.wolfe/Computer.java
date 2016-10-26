@@ -6,6 +6,7 @@ import java.util.Random;
  * Created by Jeremy on 10/20/2016.
  *
  *
+ *  This class contains the logic for the computer to play a turn.
  *
  */
 
@@ -41,17 +42,16 @@ class Computer extends Player {
 
     }
 
-    /**
-     *  make a copy of handArray and mark off limit cards?
-     *  then if swapping out a card from hand, use handArray (not the copy)
-     *
+    /*
      *      mark any existing pairs as off-limits
-     *          boolean - col1No, col2No, col3No ???
      *
-     *      mark any 2 or K as off-limits? or check for them when doing below items
+     *      check for 2's and King's when doing below logic groups
      *
      *
-     *  examine discard
+     *  Two groups of computer logic: discard processing and draw a card from deck processing
+     *  They both do the same groups of logic checks/replacements.
+     *
+     *  examine discard group
      *
      *      if discard is 2 or K
      *          move to unpaired column or column with highest faceup card and get out
@@ -60,35 +60,26 @@ class Computer extends Player {
      *
      *      if discard is lower than any faceup card, replace highest faceup card and get out
      *
-     *   draw from deck
+     *   draw from deck group
      *
      *      check for pairs, if can make a new pair(don't replace an existing pair), do it and get out
      *
      *      replace highest faceup card
      *
-     *
-     *   when looking at a card, check/copy to maxValueCard (for reference later on)
-     *
-     *
-     *      card up        card        card
-     *
-     *      card dn        card        card
-     *
-     *
+     *   card column combinations
      *      card up
-     *
-     *      card up
-     *
-     *
-     *      card dn
-     *
-     *      card up
-     *
-     *
      *      card dn
      *
      *      card dn
+     *      card up
      *
+     *      card up
+     *      card up
+     *
+     *      card dn
+     *      card dn
+     *
+     * array elements in 3 columns of 2 rows
      *      0   1   2
      *      3   4   5
      *
@@ -117,7 +108,10 @@ class Computer extends Player {
 
 
 
-    @SuppressWarnings("ConstantConditions")
+
+    //  *************** Discard Logic Driver *******************
+
+    @SuppressWarnings("ConstantConditions")   // added by IntelliJ during Analyze>Inspect Code function
     private boolean doDiscardGroupings() {
 
         boolean pairFormed = false;
@@ -196,6 +190,7 @@ class Computer extends Player {
     }
 
 
+    //  *************** Deck Logic Driver *******************
 
     @SuppressWarnings("ConstantConditions")
     private boolean doDeckGroupings() {
@@ -258,7 +253,7 @@ class Computer extends Player {
                 return deckLower;
             }
 
-            // check if discard value lower than any showing UP card, if yes, replace with discard
+            // check if drawn card value lower than any showing UP card, if yes, replace with drawn card
             if (col == 1) {
                 deckOpenSlot = doDeckOpenSlotLogic(0, 3, newCard);
             } else if (col == 2) {
@@ -607,7 +602,7 @@ class Computer extends Player {
 
     private boolean doDeckOpenSlotLogic(int row1Card, int row2Card, Card newCard) {
 
-        // don't care what the discard is at this point, replace any available open slot with it
+        // don't care what the drawn card is at this point, replace any available open slot with it
         if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN)) {
 
             // method over-loaded
@@ -620,7 +615,7 @@ class Computer extends Player {
 
         }
 
-        // don't care what the discard is at this point, replace any available open slot with it
+        // don't care what the drawn card is at this point, replace any available open slot with it
         if (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN)) {
 
             // method over-loaded
@@ -632,7 +627,6 @@ class Computer extends Player {
             return true;
 
         }
-
 
         return false;
     }

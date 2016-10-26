@@ -3,11 +3,14 @@ package com.wolfe;
 
 /*
  * Created by Jeremy on 10/19/2016.
+ *
+ * Holds standard playing card information. Deals out one card at a time.
+ *
  */
 public class Card {
 
-    static String DOWN = "D";
-    static String UP = "U";
+    static final String DOWN = "D";
+    static final String UP = "U";
 
     private int sequence;
     private final String rank;
@@ -36,7 +39,7 @@ public class Card {
     private static final String HEARTS = "H";
     private static final String CLUBS = "C";
     private static final String DIAMONDS = "D";
-    static String SPADES = "S";
+    private static final String SPADES = "S";
 
     // text coloring code from Java MCTC Class
     private static final char spadeCh = 9824;  // Unicode characters for playing card symbols
@@ -52,15 +55,18 @@ public class Card {
     @Override
     public String toString() {
 
-        if (suit.equals(HEARTS)) {
-            return ColorPrinter.print(rank + heart, TextCol.RED);
-        } else if (suit.equals(DIAMONDS)) {
-            return ColorPrinter.print(rank + diamond, TextCol.RED);
-        } else if (suit.equals(CLUBS)) {
-            return ColorPrinter.print(rank + club, TextCol.BLACK);
+        switch (suit) {
+            case HEARTS:
+                return ColorPrinter.print(rank + heart, TextCol.RED);
+            case DIAMONDS:
+                return ColorPrinter.print(rank + diamond, TextCol.RED);
+            case CLUBS:
+                return ColorPrinter.print(rank + club, TextCol.BLACK);
+            case SPADES:
+                return ColorPrinter.print(rank + spade, TextCol.BLACK);
         }
 
-        return ColorPrinter.print(rank + spade, TextCol.BLACK);
+        return null;
     }
 
 

@@ -1,14 +1,22 @@
-/**
+/*
  * Created by Jeremy on 10/19/2016
  *
  * Copied and modified from GoFishOOP
  *
+ *  Nine classes in this program:
+ *      GolfManager - main controller of game. Sets up players and handles play loops.
+ *      Player - Abstract base class contains player variables and playing a hand logic.
+ *      Human - Inherits from Player. Performs play logic based on human player inputs.
+ *              Called via polymorphism.
+ *      Computer - Inherits from Player. Performs play logic based on code logic.
+ *                 Called via polymorphism.
+ *      Deck - A deck of cards. State and behavior.
+ *      Card - Basic unit of game play, used to build a deck.
+ *      ColorPrinter - Clara's ansi card printing and color class.
+ *      Hand - Six cards dealt to a player at start of each round.
+ *      Validation - validation class for numeric input.
  *
- *
- *
- * x Classes in this program:
- *
- *
+ *  Rules of game: http://www.bicyclecards.com/how-to-play/six-card-golf/
  *
  *
  */
@@ -30,8 +38,8 @@ public class GolfManager {
     static boolean allCardsUp = false;   // end of round flag
     private static int numberOfRoundsPlayed = 0;     // game over when 9 rounds played
 
-    private static final LinkedList<Integer> playerPlaysQueue = new LinkedList<>();   // circular index list of players
-    private static final ArrayList<Player> players = new ArrayList<>();               // list of player (superclass) objects
+    private static final LinkedList<Integer> playerPlaysQueue = new LinkedList<>(); // circular index list of players
+    private static final ArrayList<Player> players = new ArrayList<>();         // list of player (superclass) objects
 
     public static void main(String[] args) {
 
@@ -70,13 +78,13 @@ public class GolfManager {
             }
 
 
-        } while (numberOfRoundsPlayed < 2);
+        } while (numberOfRoundsPlayed < 2);  // regulation game is nine rounds
 
 
         System.out.println();
         System.out.println("************* G A M E   O V E R ***************");
         for (Player player : players) {
-            System.out.println("something here...");
+            System.out.println("Player: " + player.name + " final score: " + player.score);
         }
 
         stringScanner.close();

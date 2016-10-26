@@ -7,7 +7,7 @@ import java.util.*;
  *
  * - builds a player's table of six cards four facing down and two cards face up.
  *
- * - prints out a hand
+ * - prints out a hand.
  *
  */
 class Hand {
