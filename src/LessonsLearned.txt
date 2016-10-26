@@ -1,6 +1,6 @@
 Lessons Learned from Project One
 
-
+IntelliJ Analyze>Inspect Code is your friend, use it wisely
 
 
 
