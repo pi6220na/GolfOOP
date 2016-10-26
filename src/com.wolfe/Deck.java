@@ -48,9 +48,21 @@ public class Deck {
         if (deck.size() > 0) {
             cardCountRemaining--;
             return deck.remove(0);
+        } else {
+            reloadDeck();
+            return deck.remove(0);
         }
 
-        return null;
+    }
+
+    private static void reloadDeck() {
+
+        for (Card card : discardPile) {
+
+            deck.add(card);
+            Collections.shuffle(deck);
+        }
+
     }
 
 

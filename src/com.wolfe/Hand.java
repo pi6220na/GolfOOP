@@ -29,7 +29,7 @@ public class Hand {
     // constructor
     public Hand() {
 
-        this.handArray = new ArrayList<>(6);
+        this.handArray = new ArrayList<Card>(6);
 
     }
 
@@ -87,6 +87,22 @@ public class Hand {
         System.out.println("swapCard: retCard = " + retCard);
         return retCard;
     }
+
+    protected Card swapCard(int location, Card drawnCard) {
+
+        System.out.println("swapCard: location = " + location);
+        System.out.println("swapCard: drawnCard = " + drawnCard);
+
+
+        Card retCard = handArray.get(location);
+
+        drawnCard.setFacing(UP);
+        handArray.set(location, drawnCard);
+
+        System.out.println("swapCard: retCard = " + retCard);
+        return retCard;
+    }
+
 
 
     protected int scoreAllCards() {
