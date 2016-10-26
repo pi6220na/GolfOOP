@@ -14,6 +14,14 @@ public class Computer extends Player {
     //Create a Random object - this is a random number generator object
     Random random = new Random();
 
+    boolean king2Found;
+    boolean pairFormed;
+    boolean discardLower;
+
+    boolean deckKing2Found;
+    boolean deckPairFormed;
+    boolean deckLower;
+
 
     public Computer(int playerIndex, String name, String playerType) {
         super(playerIndex, name, playerType);
@@ -97,6 +105,28 @@ public class Computer extends Player {
 
     public void drawACard() {
 
+        boolean usedDiscard = doDiscardGroupings();
+
+        if (usedDiscard) {
+            System.out.println("Computer used discard logic");
+            return;
+        } else {
+            System.out.println("Computer hit draw card from Deck logic.........");
+        }
+
+
+        boolean usedDeckCard = doDeckGroupings();
+
+        if (usedDeckCard) {
+            System.out.println("Computer used Deck Logic");
+        }
+
+
+
+    }
+
+    private boolean doDiscardGroupings() {
+
         boolean pairFormed = false;
         boolean king2Found = false;
         boolean discardLower = false;
@@ -114,7 +144,8 @@ public class Computer extends Player {
 
             if (king2Found) {
                 System.out.println("Computer used discard of 2 or King");
-                break;
+                //break;
+                return king2Found;
             }
 
 
@@ -129,7 +160,8 @@ public class Computer extends Player {
 
             if (pairFormed) {
                 System.out.println("Computer made a pair from discard");
-                break;
+                //break;
+                return pairFormed;
             }
 
             // check if discard value lower than any showing UP card, if yes, replace with discard
@@ -144,30 +176,26 @@ public class Computer extends Player {
             if (discardLower) {
                 System.out.println("Computer swapped out discard because it was lower value");
                 System.out.println("   than card it replaced");
-                break;
+                // break;
+                return discardLower;
             }
 
         }
 
+        return false;
+
+    }
 
 
-
-        if (pairFormed || discardLower || king2Found) {
-            System.out.println("Computer used discard logic");
-            return;
-        } else {
-            System.out.println("Computer hit draw card from Deck logic.........");
-        }
-
+    private boolean doDeckGroupings() {
 
         boolean deckPairFormed = false;
         boolean deckKing2Found = false;
         boolean deckLower = false;
 
+
         Card newCard = Deck.getACard();
-
-
-
+        System.out.println("Computer drew a card from Deck: " + newCard);
 
         for (int col=1; col < 4; col++) {
 
@@ -182,7 +210,8 @@ public class Computer extends Player {
 
             if (deckKing2Found) {
                 System.out.println("Computer used deck card of 2 or King");
-                break;
+                //break;
+                return deckKing2Found;
             }
 
 
@@ -197,7 +226,8 @@ public class Computer extends Player {
 
             if (deckPairFormed) {
                 System.out.println("Computer made a pair from deck card");
-                break;
+                //break;
+                return deckPairFormed;
             }
 
             // check if discard value lower than any showing UP card, if yes, replace with discard
@@ -212,55 +242,77 @@ public class Computer extends Player {
             if (deckLower) {
                 System.out.println("Computer swapped out deck card because it was lower value");
                 System.out.println("   than card it replaced");
-                break;
+                //break;
+                return deckLower;
             }
 
         }
 
+        if (!deckKing2Found && !deckPairFormed && !deckLower) {
+            System.out.println("Computer pushing newCard to disCardPile: " + newCard);
+            Deck.discardPile.push(newCard);
+            System.out.println("Computer moved Deck Card to discard pile because all three booleans false");
+            System.out.println("peeking at discard pile: " + Deck.discardPile.peek());
 
+        }
 
-
-
+        return false;
     }
 
 
-    //  *************** Deck Card Logic Section *******************
 
-    private boolean doDeckLogic(int row1Card, int row2Card, Card newCard) {
+    //  *************** Discard Logic Section *******************
 
-        // don't care about DOWN cards for this method (can't check against discard, unless we cheat :) )
+   private boolean doCardKing2DiscardLogic(int row1Card, int row2Card) {
 
-        // if hand card sequence < discard sequence, replace hand card
+        // if discard is a King or a 2... keep and find a home for it
+        if (Deck.discardPile.peek().getSequence() != 1 && Deck.discardPile.peek().getSequence() != 13) {
+
+            return false;
+
+        }
+
         if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                newCard.getSequence() <
-                        hand.handArray.get(row1Card).getSequence()) {
+                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
 
+            // TODO check for pair before doing this
             // method over-loaded
-            Card returnedCard = hand.swapCard(row1Card, newCard);
+            Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
             Deck.discardPile.push(returnedCard);
-            System.out.println("Computer added swap card to discard pile");
-
             return true;
+
         }
 
-        // if hand card sequence < discard sequence, replace hand card
-        if (hand.handArray.get(row2Card).getFacing().equals(UP) &&
-                newCard.getSequence() <
-                        hand.handArray.get(row2Card).getSequence()) {
+        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(UP))) {
+
+            // TODO check for pair before doing this
+            // method over-loaded
+            Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
+            Deck.discardPile.push(returnedCard);
+            return true;
+
+        }
+
+        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
 
             // method over-loaded
-            Card returnedCard = hand.swapCard(row2Card, newCard);
+            Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
             Deck.discardPile.push(returnedCard);
-            System.out.println("Computer added swap card to discard pile");
-
             return true;
+
         }
+
+
+        // if both cards UP, skip over this column
 
 
         return false;
     }
 
-    private boolean doCardPairDeckLogic(int row1Card, int row2Card, Card newCard) {
+
+   private boolean doCardPairDiscardLogic(int row1Card, int row2Card) {
 
         // matching pair showing, ignore
         if ((hand.handArray.get(row1Card).getFacing().equals(UP) &&
@@ -275,11 +327,11 @@ public class Computer extends Player {
         if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
                 (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
 
-            if (newCard.getSequence() ==
+            if (Deck.discardPile.peek().getSequence() ==
                     hand.handArray.get(row1Card).getSequence()) {
 
                 // method over-loaded
-                Card returnedCard = hand.swapCard(row2Card, newCard);
+                Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
                 Deck.discardPile.push(returnedCard);
                 return true;
             }
@@ -290,11 +342,11 @@ public class Computer extends Player {
         if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
                 (hand.handArray.get(row2Card).getFacing().equals(UP))) {
 
-            if (newCard.getSequence() ==
+            if (Deck.discardPile.peek().getSequence() ==
                     hand.handArray.get(row2Card).getSequence()) {
 
                 // method over-loaded
-                Card returnedCard = hand.swapCard(row1Card, newCard);
+                Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
                 Deck.discardPile.push(returnedCard);
                 return true;
             }
@@ -303,7 +355,66 @@ public class Computer extends Player {
 
         // if both cards in hand are facing down, we can't use to make a pair, no need to check anything
         return false;
+
     }
+
+
+   private boolean doDiscardLogic(int row1Card, int row2Card) {
+
+        // don't care about DOWN cards for this method (can't check against discard, unless we cheat :) )
+
+       int highCard = getHighCardValue();
+
+        // if hand card sequence < discard sequence, replace hand card
+        if (hand.handArray.get(row1Card).getSequence() == highCard &&
+                hand.handArray.get(row1Card).getFacing().equals(UP) &&
+                Deck.discardPile.peek().getSequence() < highCard) {
+
+            // method over-loaded
+            Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
+            Deck.discardPile.push(returnedCard);
+            System.out.println("Computer added swap card to discard pile");
+
+            return true;
+        }
+
+        // if hand card sequence < discard sequence, replace hand card
+       if (hand.handArray.get(row2Card).getSequence() == highCard &&
+               hand.handArray.get(row2Card).getFacing().equals(UP) &&
+               Deck.discardPile.peek().getSequence() < highCard) {
+
+            // method over-loaded
+            Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
+            Deck.discardPile.push(returnedCard);
+            System.out.println("Computer added swap card to discard pile");
+
+            return true;
+        }
+
+        return false;
+    }
+
+    // find the highest valued card that is not a King (13)
+    private int getHighCardValue() {
+
+        int maxCard = 0;
+
+        for (Card card : hand.handArray) {
+
+            // don't replace a King
+            if (card.getFacing().equals(UP) && card.getSequence() > maxCard
+                    && card.getSequence() != 13) {
+                maxCard = card.getSequence();
+            }
+
+        }
+
+        return maxCard;
+    }
+
+
+    //  *************** Deck Card Logic Section *******************
+
 
     private boolean doCardKing2DeckLogic(int row1Card, int row2Card, Card newCard) {
 
@@ -352,102 +463,13 @@ public class Computer extends Player {
     }
 
 
-
-
-    //  *************** Discard Logic Section *******************
-
-
-
-
-    private boolean doDiscardLogic(int row1Card, int row2Card) {
-
-        // don't care about DOWN cards for this method (can't check against discard, unless we cheat :) )
-
-        // if hand card sequence < discard sequence, replace hand card
-        if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                Deck.discardPile.peekLast().getSequence() <
-                hand.handArray.get(row1Card).getSequence()) {
-
-            // method over-loaded
-            Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
-            Deck.discardPile.push(returnedCard);
-            System.out.println("Computer added swap card to discard pile");
-
-            return true;
-        }
-
-        // if hand card sequence < discard sequence, replace hand card
-        if (hand.handArray.get(row2Card).getFacing().equals(UP) &&
-                Deck.discardPile.peekLast().getSequence() <
-                        hand.handArray.get(row2Card).getSequence()) {
-
-            // method over-loaded
-            Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
-            Deck.discardPile.push(returnedCard);
-            System.out.println("Computer added swap card to discard pile");
-
-            return true;
-        }
-
-        return false;
-    }
-
-    private boolean doCardKing2DiscardLogic(int row1Card, int row2Card) {
-
-        // if discard is a King or a 2... keep and find a home for it
-        if (Deck.discardPile.peekLast().getSequence() != 1 && Deck.discardPile.peekLast().getSequence() != 13) {
-
-            return false;
-
-        }
-
-        if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
-
-            // TODO check for pair before doing this
-            // method over-loaded
-            Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
-            Deck.discardPile.push(returnedCard);
-            return true;
-
-        }
-
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP))) {
-
-            // TODO check for pair before doing this
-            // method over-loaded
-            Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
-            Deck.discardPile.push(returnedCard);
-            return true;
-
-        }
-
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
-
-            // method over-loaded
-            Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
-            Deck.discardPile.push(returnedCard);
-            return true;
-
-        }
-
-
-        // if both cards UP, skip over this column
-
-
-        return false;
-    }
-
-
-    private boolean doCardPairDiscardLogic(int row1Card, int row2Card) {
+    private boolean doCardPairDeckLogic(int row1Card, int row2Card, Card newCard) {
 
         // matching pair showing, ignore
         if ((hand.handArray.get(row1Card).getFacing().equals(UP) &&
                 (hand.handArray.get(row2Card).getFacing().equals(UP)))
-            &&
-           (hand.handArray.get(row1Card).getSequence() == hand.handArray.get(row2Card).getSequence())) {
+                &&
+                (hand.handArray.get(row1Card).getSequence() == hand.handArray.get(row2Card).getSequence())) {
 
             return false;
         }
@@ -456,11 +478,11 @@ public class Computer extends Player {
         if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
                 (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
 
-            if (Deck.discardPile.peekLast().getSequence() ==
+            if (newCard.getSequence() ==
                     hand.handArray.get(row1Card).getSequence()) {
 
                 // method over-loaded
-                Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
+                Card returnedCard = hand.swapCard(row2Card, newCard);
                 Deck.discardPile.push(returnedCard);
                 return true;
             }
@@ -471,11 +493,11 @@ public class Computer extends Player {
         if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
                 (hand.handArray.get(row2Card).getFacing().equals(UP))) {
 
-            if (Deck.discardPile.peekLast().getSequence() ==
+            if (newCard.getSequence() ==
                     hand.handArray.get(row2Card).getSequence()) {
 
                 // method over-loaded
-                Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
+                Card returnedCard = hand.swapCard(row1Card, newCard);
                 Deck.discardPile.push(returnedCard);
                 return true;
             }
@@ -484,8 +506,46 @@ public class Computer extends Player {
 
         // if both cards in hand are facing down, we can't use to make a pair, no need to check anything
         return false;
-
     }
+
+
+    private boolean doDeckLogic(int row1Card, int row2Card, Card newCard) {
+
+        // don't care about DOWN cards for this method (can't check against discard, unless we cheat :) )
+
+
+        int highCard = getHighCardValue();
+
+        // if hand card sequence < discard sequence, replace hand card
+        if (hand.handArray.get(row1Card).getSequence() == highCard &&
+                hand.handArray.get(row1Card).getFacing().equals(UP) &&
+                Deck.discardPile.peek().getSequence() < highCard) {
+
+            // method over-loaded
+            Card returnedCard = hand.swapCard(row1Card, newCard);
+            Deck.discardPile.push(returnedCard);
+            System.out.println("Computer added swap card to discard pile");
+
+            return true;
+        }
+
+        // if hand card sequence < discard sequence, replace hand card
+        if (hand.handArray.get(row2Card).getSequence() == highCard &&
+                hand.handArray.get(row2Card).getFacing().equals(UP) &&
+                Deck.discardPile.peek().getSequence() < highCard) {
+
+            // method over-loaded
+            Card returnedCard = hand.swapCard(row2Card, newCard);
+            Deck.discardPile.push(returnedCard);
+            System.out.println("Computer added swap card to discard pile");
+
+            return true;
+        }
+
+
+        return false;
+    }
+
 
 
 

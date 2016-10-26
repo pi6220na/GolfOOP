@@ -68,7 +68,7 @@ public class Deck {
 
     static void printPlayerDrawsFrom() {
         System.out.println("*******      *******************");
-        System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peekLast());
+        System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peek());
         System.out.println("*******      *******************");
     }
 
