@@ -2,7 +2,7 @@ package com.wolfe;
 
 import java.util.*;
 
-/**
+/*
  * Created by Jeremy on 10/20/2016.
  *
  * A Player can be either Human or Computer depending on how it's extended
@@ -13,42 +13,31 @@ import java.util.*;
  *
  *
  */
-public abstract class Player {
+abstract class Player {
 
     //Create two scanners, one for Strings, and one for numbers - int and float values.
 
     //Use this scanner to read text data that will be stored in String variables
-    static Scanner stringScanner = new Scanner(System.in);
-    //Use this scanner to read in numerical data that will be stored in int or double variables
-    static Scanner numberScanner = new Scanner(System.in);
-
-    //Create a Random object - this is a random number generator object
-    Random random = new Random();
+    static final Scanner stringScanner = new Scanner(System.in);
 
     static String COMPUTER = "C";
     static String HUMAN = "H";
-    static String DOWN = "D";
-    static String UP = "U";
 
 
-    private int playerIndex;         // player index/element position in arraylist
-    protected String name;        // name
-    protected String playerType;  // a player can be human driven or computer driven
-    protected Hand hand;        // the player's hand of cards
-    protected int score;        // accumulated score for each round
-    protected int scoreRound;   // score for hand during round
+    final String name;        // name
+    Hand hand;        // the player's hand of cards
+    int score;        // accumulated score for each round
+    int scoreRound;   // score for hand during round
 
     // constructor
-    public Player(int playerIndex, String name, String playerType) {
+    Player(String name) {
 
-        this.playerIndex = playerIndex;
         this.name = name;
-        this.playerType = playerType;
 
     }
 
 
-    public void playRound(ArrayList<Player> players) {
+    void playRound(ArrayList<Player> players) {
 
         System.out.println();
         System.out.println("****** Play a Turn ****** Player " + name);
@@ -78,7 +67,7 @@ public abstract class Player {
 
         for (Player player : players) {
 
-            player.hand.printHand(player.name, player.playerType);
+            player.hand.printHand(player.name);
             int test = player.hand.scoreUpCards();
             System.out.println("Score for up cards = " + test);
 
@@ -93,7 +82,7 @@ public abstract class Player {
 
     }
 
-    public void checkCardUpStatus() {
+    private void checkCardUpStatus() {
 
         GolfManager.allCardsUp = hand.checkCardStatus();
 
@@ -104,14 +93,14 @@ public abstract class Player {
         hand = new Hand();
         hand.buildNewHand();
 
-        hand.printHand(name, playerType);
+        hand.printHand(name);
 
     }
 
     public abstract void turnUpTwo();
 
 
-    public abstract void drawACard();
+    protected abstract void drawACard();
 
 
 }// end class Player

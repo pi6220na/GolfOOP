@@ -22,20 +22,16 @@ public class GolfManager {
 
     //Create two scanners, one for Strings, and one for numbers - int and float values.
     //Use this scanner to read text data that will be stored in String variables
-    static Scanner stringScanner = new Scanner(System.in);
+    private static final Scanner stringScanner = new Scanner(System.in);
     //Use this scanner to read in numerical data that will be stored in int or double variables
-    static Scanner numberScanner = new Scanner(System.in);
+    static final Scanner numberScanner = new Scanner(System.in);
 
-    public static int dealCount = 6;  // number of cards to deal to a player's table
-    public static int numberOfPlayers;    // number of players in this game
-    public static boolean allCardsUp = false;   // end of round flag
-    public static int numberOfRoundsPlayed = 0;     // game over when 9 rounds played
+    static final int dealCount = 6;  // number of cards to deal to a player's table
+    static boolean allCardsUp = false;   // end of round flag
+    private static int numberOfRoundsPlayed = 0;     // game over when 9 rounds played
 
-    static String COMPUTER = "C";
-    static String HUMAN = "H";
-
-    static LinkedList<Integer> playerPlaysQueue = new LinkedList<>();   // circular index list of players
-    static ArrayList<Player> players = new ArrayList<>();               // list of player (superclass) objects
+    private static final LinkedList<Integer> playerPlaysQueue = new LinkedList<>();   // circular index list of players
+    private static final ArrayList<Player> players = new ArrayList<>();               // list of player (superclass) objects
 
     public static void main(String[] args) {
 
@@ -111,20 +107,22 @@ public class GolfManager {
     }
 
 
-    // sets up game and players TODO needs input validations
-    protected static void setupPlayers() {
+    // sets up game and players
+    private static void setupPlayers() {
 
-        String morePlayers = "y";
         String name;
         String playerType;
         int pCount;
+        int loopCount = 0;
         int playerIndex = 0;
 
-        numberOfPlayers = Validation.intInput("Enter the number of players (2 thru 4): ");
+        int numberOfPlayers = Validation.intInput("Enter the number of players (2 thru 4): ");
         while (numberOfPlayers < 2 || numberOfPlayers > 4) {
             System.out.println("Input error, wrong number of players.");
-            pCount = Validation.intInput("Enter the number of players (2 thru 4): ");
+            numberOfPlayers = Validation.intInput("Enter the number of players (2 thru 4): ");
         }
+
+        pCount = numberOfPlayers;
 
         do {
 
@@ -139,22 +137,21 @@ public class GolfManager {
                 playerType = stringScanner.nextLine();
             }
 
-            if (playerType.equals(HUMAN)) {
-                Human human = new Human(playerIndex, name, HUMAN);
+            if (playerType.equals(Player.HUMAN)) {
+                Human human = new Human(name);
                 players.add(playerIndex, human);       // add player object to arraylist
             }
-            if (playerType.equals(COMPUTER)) {
-                Computer computer = new Computer(playerIndex, name, COMPUTER);
+            if (playerType.equals(Player.COMPUTER)) {
+                Computer computer = new Computer(name);
                 players.add(playerIndex, computer);       // add player object to arraylist
             }
 
             playerPlaysQueue.add(playerIndex);      // index(ID) of player added to round robin queue
             playerIndex++;
 
-            System.out.println("Enter more players? (y or n):");
-            morePlayers = stringScanner.nextLine();
+            loopCount++;
 
-        } while (morePlayers.equalsIgnoreCase("y") && playerIndex < 4);
+        } while (playerIndex < 4 && pCount > loopCount);
 
     }
 

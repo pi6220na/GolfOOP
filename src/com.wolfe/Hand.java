@@ -2,7 +2,7 @@ package com.wolfe;
 
 import java.util.*;
 
-/**
+/*
  * Created by Jeremy on 10/20/2016.
  *
  * - builds a player's table of six cards four facing down and two cards face up.
@@ -10,32 +10,32 @@ import java.util.*;
  * - prints out a hand
  *
  */
-public class Hand {
+class Hand {
 
-    public ArrayList<Card> handArray;
+    final ArrayList<Card> handArray;
 
-    static int row1Left = 0;
-    static int row1Mid = 1;
-    static int row1Right = 2;
+    private static final int row1Left = 0;
+    private static final int row1Mid = 1;
+    private static final int row1Right = 2;
 
-    static int row2Left = 3;
-    static int row2Mid = 4;
-    static int row2Right = 5;
+    private static final int row2Left = 3;
+    private static final int row2Mid = 4;
+    private static final int row2Right = 5;
 
-    static String DOWN = "D";
-    static String UP = "U";
+    private static final String DOWN = "D";
+    private static final String UP = "U";
 
 
     // constructor
-    public Hand() {
+    Hand() {
 
-        this.handArray = new ArrayList<Card>(6);
+        this.handArray = new ArrayList<>(6);
 
     }
 
 
     // at start of game, builds a new hand with dealCount number of cards
-    protected void buildNewHand() {
+    void buildNewHand() {
 
         System.out.println("entering buildNewHand");
         System.out.println("   GolfManager.dealCount = " + GolfManager.dealCount);
@@ -50,7 +50,7 @@ public class Hand {
     }
 
     // adds card from Deck to hand
-    protected void addCardToArray(Card card) {
+    private void addCardToArray(Card card) {
 
         card.setFacing(DOWN);
         handArray.add(card);
@@ -58,7 +58,7 @@ public class Hand {
     }
 
 
-    protected boolean checkCardStatus() {
+    boolean checkCardStatus() {
 
         for (Card card : handArray) {
 
@@ -72,7 +72,7 @@ public class Hand {
     }
 
 
-    protected Card swapCard(String choice, Card drawnCard) {
+    Card swapCard(String choice, Card drawnCard) {
 
         int location = Integer.parseInt(choice);
         System.out.println("swapCard: location = " + location);
@@ -88,7 +88,7 @@ public class Hand {
         return retCard;
     }
 
-    protected Card swapCard(int location, Card drawnCard) {
+    Card swapCard(int location, Card drawnCard) {
 
         System.out.println("swapCard: location = " + location);
         System.out.println("swapCard: drawnCard = " + drawnCard);
@@ -105,7 +105,7 @@ public class Hand {
 
 
 
-    protected int scoreAllCards() {
+    int scoreAllCards() {
 
         for (Card card : handArray) {
 
@@ -118,9 +118,9 @@ public class Hand {
 
 
     // during game play, show partial score of up cards. this method determines the up cards score.
-    protected int scoreUpCards() {
+    int scoreUpCards() {
 
-        ArrayList<Card> workArray = new ArrayList<Card>();
+        ArrayList<Card> workArray = new ArrayList<>();
 
         for (Card card : handArray) {
 
@@ -131,29 +131,6 @@ public class Hand {
 
         }
 
-/*
-        System.out.println("handArray");
-        for (Card card : handArray) {
-
-            System.out.println(card.getSequence());
-            System.out.println(card.getRank());
-            System.out.println(card.getSuit());
-            System.out.println(card.getFacing());
-            System.out.println();
-
-        }
-
-        System.out.println("workArray");
-        for (Card card : workArray) {
-
-            System.out.println(card.getSequence());
-            System.out.println(card.getRank());
-            System.out.println(card.getSuit());
-            System.out.println(card.getFacing());
-            System.out.println();
-
-        }
-*/
 
         // if card is facing down, set it to 0 ignore it
         for (Card card : workArray) {
@@ -251,11 +228,10 @@ public class Hand {
     }
 
 
-    protected void printHand(String name, String playerType) {
+    void printHand(String name) {
 
         System.out.println();
         System.out.println("entering printHand - ");
-        System.out.println("Player: " + name + " Player Type: " + playerType);
 
         System.out.println("0    1    2");
         if (handArray.get(row1Left).getFacing().equals(UP)) System.out.print(handArray.get(row1Left) + "  ");

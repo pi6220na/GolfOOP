@@ -1,13 +1,13 @@
 package com.wolfe;
 
-/**
- * Created by myrlin on 10/20/2016.
+/*
+ * Created by Jeremy on 10/20/2016.
  */
 public class Human extends Player {
 
-
-    public Human(int playerIndex, String name, String playerType) {
-        super(playerIndex, name, playerType);
+    // constructor calls super class Player
+    public Human(String name) {
+        super(name);
 
     }
 
@@ -36,10 +36,10 @@ public class Human extends Player {
             turnSecond = GolfManager.numberScanner.nextInt();
         }
 
-        hand.handArray.get(turnFirst).setFacing(UP);
-        hand.handArray.get(turnSecond).setFacing(UP);
+        hand.handArray.get(turnFirst).setFacing(Card.UP);
+        hand.handArray.get(turnSecond).setFacing(Card.UP);
 
-        hand.printHand(name, playerType);
+        hand.printHand(name);
     }
 
     public void drawACard() {

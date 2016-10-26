@@ -1,8 +1,8 @@
 package com.wolfe;
 
 
-/**
- * Created by myrlin on 10/19/2016.
+/*
+ * Created by Jeremy on 10/19/2016.
  */
 public class Card {
 
@@ -10,8 +10,8 @@ public class Card {
     static String UP = "U";
 
     private int sequence;
-    private String rank;
-    private String suit;
+    private final String rank;
+    private final String suit;
     private String facing;
 
 
@@ -33,21 +33,21 @@ public class Card {
         this.facing = facing;           // UP or DOWN
     }
 
-    static String HEARTS = "H";
-    static String CLUBS = "C";
-    static String DIAMONDS = "D";
+    private static final String HEARTS = "H";
+    private static final String CLUBS = "C";
+    private static final String DIAMONDS = "D";
     static String SPADES = "S";
 
     // text coloring code from Java MCTC Class
-    static char spadeCh = 9824;  // Unicode characters for playing card symbols
-    static char clubCh = 9827;
-    static char heartCh = 9829;
-    static char diamondCh = 9830;
+    private static final char spadeCh = 9824;  // Unicode characters for playing card symbols
+    private static final char clubCh = 9827;
+    private static final char heartCh = 9829;
+    private static final char diamondCh = 9830;
 
-    static String spade = Character.toString(spadeCh);
-    static String club = Character.toString(clubCh);
-    static String heart = Character.toString(heartCh);
-    static String diamond = Character.toString(diamondCh);
+    private static final String spade = Character.toString(spadeCh);
+    private static final String club = Character.toString(clubCh);
+    private static final String heart = Character.toString(heartCh);
+    private static final String diamond = Character.toString(diamondCh);
 
     @Override
     public String toString() {

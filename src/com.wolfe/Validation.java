@@ -1,6 +1,6 @@
 package com.wolfe;
 
-/**
+/*
  * Created by Jeremy on 10/21/2016.
  *
  *  copied from Java2545examples:Validation.java
@@ -8,9 +8,8 @@ package com.wolfe;
  */
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
-public class Validation {
+class Validation {
 
     // A variant of the method below - notice it calls doubleInput with null as the argument
     public static double doubleInput() {
@@ -19,7 +18,7 @@ public class Validation {
 
     //Takes a question, asks user the question, checks to make sure user enters a double, and
     //then returns that double to the calling method.
-    public static double doubleInput(String question) {
+    private static double doubleInput(String question) {
 
         while (true) {
             // If user has provided a question, then print it for the user

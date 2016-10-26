@@ -2,29 +2,21 @@ package com.wolfe;
 
 import java.util.Random;
 
-/**
+/*
  * Created by Jeremy on 10/20/2016.
  *
  *
  *
  */
 
-public class Computer extends Player {
+class Computer extends Player {
 
     //Create a Random object - this is a random number generator object
-    Random random = new Random();
+    private final Random random = new Random();
 
-    boolean king2Found;
-    boolean pairFormed;
-    boolean discardLower;
-
-    boolean deckKing2Found;
-    boolean deckPairFormed;
-    boolean deckLower;
-
-
-    public Computer(int playerIndex, String name, String playerType) {
-        super(playerIndex, name, playerType);
+    // constructor calls super class Player
+    Computer(String name) {
+        super(name);
 
     }
 
@@ -42,10 +34,10 @@ public class Computer extends Player {
             rand2 = random.nextInt(6);
         }
 
-        hand.handArray.get(rand1).setFacing(UP);
-        hand.handArray.get(rand2).setFacing(UP);
+        hand.handArray.get(rand1).setFacing(Card.UP);
+        hand.handArray.get(rand2).setFacing(Card.UP);
 
-        hand.printHand(name, playerType);
+        hand.printHand(name);
 
     }
 
@@ -125,6 +117,7 @@ public class Computer extends Player {
 
 
 
+    @SuppressWarnings("ConstantConditions")
     private boolean doDiscardGroupings() {
 
         boolean pairFormed = false;
@@ -204,6 +197,7 @@ public class Computer extends Player {
 
 
 
+    @SuppressWarnings("ConstantConditions")
     private boolean doDeckGroupings() {
 
         boolean deckPairFormed = false;
@@ -305,8 +299,8 @@ public class Computer extends Player {
 
         }
 
-        if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN))) {
 
             // TODO check for pair before doing this
             // method over-loaded
@@ -316,8 +310,8 @@ public class Computer extends Player {
 
         }
 
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.UP))) {
 
             // TODO check for pair before doing this
             // method over-loaded
@@ -327,8 +321,8 @@ public class Computer extends Player {
 
         }
 
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN))) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
@@ -348,8 +342,8 @@ public class Computer extends Player {
    private boolean doCardPairDiscardLogic(int row1Card, int row2Card) {
 
         // matching pair showing, ignore
-        if ((hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP)))
+        if ((hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.UP)))
                 &&
                 (hand.handArray.get(row1Card).getSequence() == hand.handArray.get(row2Card).getSequence())) {
 
@@ -357,8 +351,8 @@ public class Computer extends Player {
         }
 
         // make a pair with row1 and discard?
-        if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN))) {
 
             if (Deck.discardPile.peek().getSequence() ==
                     hand.handArray.get(row1Card).getSequence()) {
@@ -372,8 +366,8 @@ public class Computer extends Player {
         }
 
         // make a pair with row2 and discard?
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.UP))) {
 
             if (Deck.discardPile.peek().getSequence() ==
                     hand.handArray.get(row2Card).getSequence()) {
@@ -400,7 +394,7 @@ public class Computer extends Player {
 
         // if hand card sequence < discard sequence, replace hand card
         if (hand.handArray.get(row1Card).getSequence() == highCard &&
-                hand.handArray.get(row1Card).getFacing().equals(UP) &&
+                hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
                 Deck.discardPile.peek().getSequence() < highCard) {
 
             // method over-loaded
@@ -413,7 +407,7 @@ public class Computer extends Player {
 
         // if hand card sequence < discard sequence, replace hand card
        if (hand.handArray.get(row2Card).getSequence() == highCard &&
-               hand.handArray.get(row2Card).getFacing().equals(UP) &&
+               hand.handArray.get(row2Card).getFacing().equals(Card.UP) &&
                Deck.discardPile.peek().getSequence() < highCard) {
 
             // method over-loaded
@@ -435,7 +429,7 @@ public class Computer extends Player {
         for (Card card : hand.handArray) {
 
             // don't replace a King
-            if (card.getFacing().equals(UP) && card.getSequence() > maxCard
+            if (card.getFacing().equals(Card.UP) && card.getSequence() > maxCard
                     && card.getSequence() != 13) {
                 maxCard = card.getSequence();
             }
@@ -449,11 +443,11 @@ public class Computer extends Player {
     private boolean doDiscardOpenSlotLogic(int row1Card, int row2Card) {
 
         // don't care what the discard is at this point, replace any available open slot with it
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN)) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN)) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row1Card, Deck.discardPile.pop());
-            returnedCard.setFacing(UP);
+            returnedCard.setFacing(Card.UP);
             Deck.discardPile.push(returnedCard);
             System.out.println("Computer added available open r1 slot card to discard pile");
 
@@ -461,11 +455,11 @@ public class Computer extends Player {
 
         }
         // don't care what the discard is at this point, replace any available open slot with it
-        if (hand.handArray.get(row2Card).getFacing().equals(DOWN)) {
+        if (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN)) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row2Card, Deck.discardPile.pop());
-            returnedCard.setFacing(UP);
+            returnedCard.setFacing(Card.UP);
             Deck.discardPile.push(returnedCard);
             System.out.println("Computer added available open r2 slot card to discard pile");
 
@@ -490,8 +484,8 @@ public class Computer extends Player {
 
         }
 
-        if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN))) {
 
             // TODO check for pair before doing this
             // method over-loaded
@@ -501,8 +495,8 @@ public class Computer extends Player {
 
         }
 
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.UP))) {
 
             // TODO check for pair before doing this
             // method over-loaded
@@ -512,8 +506,8 @@ public class Computer extends Player {
 
         }
 
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN))) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row1Card, newCard);
@@ -531,8 +525,8 @@ public class Computer extends Player {
     private boolean doCardPairDeckLogic(int row1Card, int row2Card, Card newCard) {
 
         // matching pair showing, ignore
-        if ((hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP)))
+        if ((hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.UP)))
                 &&
                 (hand.handArray.get(row1Card).getSequence() == hand.handArray.get(row2Card).getSequence())) {
 
@@ -540,8 +534,8 @@ public class Computer extends Player {
         }
 
         // make a pair with row1 and discard?
-        if (hand.handArray.get(row1Card).getFacing().equals(UP) &&
-                (hand.handArray.get(row2Card).getFacing().equals(DOWN))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN))) {
 
             if (newCard.getSequence() ==
                     hand.handArray.get(row1Card).getSequence()) {
@@ -555,8 +549,8 @@ public class Computer extends Player {
         }
 
         // make a pair with row2 and discard?
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN) &&
-                (hand.handArray.get(row2Card).getFacing().equals(UP))) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                (hand.handArray.get(row2Card).getFacing().equals(Card.UP))) {
 
             if (newCard.getSequence() ==
                     hand.handArray.get(row2Card).getSequence()) {
@@ -583,7 +577,7 @@ public class Computer extends Player {
 
         // if hand card sequence < discard sequence, replace hand card
         if (hand.handArray.get(row1Card).getSequence() == highCard &&
-                hand.handArray.get(row1Card).getFacing().equals(UP) &&
+                hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
                 Deck.discardPile.peek().getSequence() < highCard) {
 
             // method over-loaded
@@ -596,7 +590,7 @@ public class Computer extends Player {
 
         // if hand card sequence < discard sequence, replace hand card
         if (hand.handArray.get(row2Card).getSequence() == highCard &&
-                hand.handArray.get(row2Card).getFacing().equals(UP) &&
+                hand.handArray.get(row2Card).getFacing().equals(Card.UP) &&
                 Deck.discardPile.peek().getSequence() < highCard) {
 
             // method over-loaded
@@ -614,11 +608,11 @@ public class Computer extends Player {
     private boolean doDeckOpenSlotLogic(int row1Card, int row2Card, Card newCard) {
 
         // don't care what the discard is at this point, replace any available open slot with it
-        if (hand.handArray.get(row1Card).getFacing().equals(DOWN)) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN)) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row1Card, newCard);
-            returnedCard.setFacing(UP);
+            returnedCard.setFacing(Card.UP);
             Deck.discardPile.push(returnedCard);
             System.out.println("Computer added Deck card to available open r1 slot card to discard pile");
 
@@ -627,11 +621,11 @@ public class Computer extends Player {
         }
 
         // don't care what the discard is at this point, replace any available open slot with it
-        if (hand.handArray.get(row2Card).getFacing().equals(DOWN)) {
+        if (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN)) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row2Card, newCard);
-            returnedCard.setFacing(UP);
+            returnedCard.setFacing(Card.UP);
             Deck.discardPile.push(returnedCard);
             System.out.println("Computer added Deck card to available open r2 slot card to discard pile");
 
@@ -644,30 +638,4 @@ public class Computer extends Player {
     }
 
 
-
-
-    /*
-    private void examineColumn(int col) {
-
-        switch (col) {
-            case 1:
-                int test0 = hand.handArray.get(0).getSequence();
-                int test3 = hand.handArray.get(3).getSequence();
-                doCardPairDiscardLogic(col, test0, test3);
-                break;
-            case 2:
-                int test1 = hand.handArray.get(1).getSequence();
-                int test4 = hand.handArray.get(4).getSequence();
-                doCardPairDiscardLogic(col, test1, test4);
-                break;
-            case 3:
-                int test2 = hand.handArray.get(2).getSequence();
-                int test5 = hand.handArray.get(5).getSequence();
-                doCardPairDiscardLogic(col, test2, test5);
-                break;
-        }
-
-    }
-    */
-
-}
+} // end Class Computer

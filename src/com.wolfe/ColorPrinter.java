@@ -16,7 +16,7 @@ enum TextCol {
     WHITE ( "\u001B[37m"),
     BLACK ( "\u001B[30m");
 
-    private String value;
+    private final String value;
     TextCol(String val) {this.value = val;}
     public String value() {return value;}
 }
@@ -32,15 +32,15 @@ enum TextBk {
     WHITE ( "\u001B[47m"),
     BLACK ( "\u001B[40m");
 
-    String value;
+    final String value;
     TextBk(String val) {this.value = val;}
     public String value() {return value;}
 
 }
 
-public class ColorPrinter {
+class ColorPrinter {
 
-    static final String ANSI_reset_color = "\u001B[0m";
+    private static final String ANSI_reset_color = "\u001B[0m";
 
     public static String print(String text, TextCol color)  {
         return color.value() + text + ANSI_reset_color;

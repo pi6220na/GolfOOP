@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 
-/**
+/*
  * Created by Jeremy on 10/11/2016.
  *
  * - creates a deck of 52 playing cards
  * - deals out one card at a time
  *
  */
-public class Deck {
+class Deck {
 
-    static String HEARTS = "H";
-    static String CLUBS = "C";
-    static String DIAMONDS = "D";
-    static String SPADES = "S";
+    private static final String HEARTS = "H";
+    private static final String CLUBS = "C";
+    private static final String DIAMONDS = "D";
+    private static final String SPADES = "S";
 
-    static int cardCountRemaining = 52;
+    private static int cardCountRemaining = 52;
 
     //static HashMap<Integer,Card> deck = new TreeMap<>();
-    static ArrayList<Card> deck = new ArrayList<>();
-    static LinkedList<Card> discardPile = new LinkedList<>();   // stack
+    private static ArrayList<Card> deck = new ArrayList<>();
+    static final LinkedList<Card> discardPile = new LinkedList<>();   // stack
 
     public static void buildDeck() {
-        deck = new ArrayList<Card>();
+        deck = new ArrayList<>();
         for (int i = 1; i < 14; i++) {
             String j = Card.convertSeqToRank(i);
             Card card1 = new Card(i, j, HEARTS);
