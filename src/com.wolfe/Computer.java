@@ -287,8 +287,9 @@ class Computer extends Player {
 
    private boolean doCardKing2DiscardLogic(int row1Card, int row2Card) {
 
-        // if discard is a King or a 2... keep and find a home for it
-        if (Deck.discardPile.peek().getSequence() != 1 && Deck.discardPile.peek().getSequence() != 13) {
+        // if discard is a King or a 2 or an Ace... keep and find a home for it
+        if (Deck.discardPile.peek().getSequence() != 1 && Deck.discardPile.peek().getSequence() != 13
+                && Deck.discardPile.peek().getSequence() != 2) {
 
             return false;
 
@@ -472,8 +473,9 @@ class Computer extends Player {
 
     private boolean doCardKing2DeckLogic(int row1Card, int row2Card, Card newCard) {
 
-        // if deck card is a King or a 2... keep and find a home for it
-        if (newCard.getSequence() != 1 && newCard.getSequence() != 13) {
+        // if deck card is a King or a 2 or an Ace... keep and find a home for it
+        if (newCard.getSequence() != 1 && newCard.getSequence() != 13
+                && Deck.discardPile.peek().getSequence() != 2) {
 
             return false;
 

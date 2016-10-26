@@ -4,7 +4,12 @@ IntelliJ Analyze>Inspect Code is your friend, use it wisely
 
 
 
+
 Questions remaining:
+
+access levels for classes/methods/variables... still a mystery to me...
+protected vs default
+
 
 
 Using the sub-class type to instantiate a new object:
