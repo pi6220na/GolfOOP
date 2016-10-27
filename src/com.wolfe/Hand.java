@@ -84,7 +84,7 @@ class Hand {
         drawnCard.setFacing(UP);
         handArray.set(location, drawnCard);
 
-        System.out.println("swapCard: retCard = " + retCard);
+        System.out.println("swapCard: replacing Card = " + retCard);
         return retCard;
     }
 
@@ -99,7 +99,7 @@ class Hand {
         drawnCard.setFacing(UP);
         handArray.set(location, drawnCard);
 
-        System.out.println("swapCard: retCard = " + retCard);
+        System.out.println("swapCard: replacing Card = " + retCard);
         return retCard;
     }
 

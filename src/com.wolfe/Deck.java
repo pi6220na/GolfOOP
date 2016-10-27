@@ -21,8 +21,8 @@ class Deck {
     private static int cardCountRemaining = 52;
 
     //static HashMap<Integer,Card> deck = new TreeMap<>();
-    private static ArrayList<Card> deck = new ArrayList<>();
-    static final LinkedList<Card> discardPile = new LinkedList<>();   // stack
+    static ArrayList<Card> deck = new ArrayList<>();
+    static LinkedList<Card> discardPile = new LinkedList<>();   // stack
 
     public static void buildDeck() {
         deck = new ArrayList<>();
@@ -37,6 +37,7 @@ class Deck {
             deck.add(card3);
             deck.add(card4);
         }
+        discardPile.clear();
     }
 
     public static void shuffleDeck() {
@@ -50,18 +51,28 @@ class Deck {
             return deck.remove(0);
         } else {
             reloadDeck();
-            return deck.remove(0);
+            if (deck.size() > 0) {
+                cardCountRemaining--;
+                return deck.remove(0);
+            } else {
+                System.out.println("Major problem with deck running out of cards");
+                System.exit(-5);
+            }
         }
-
+        return null;
     }
 
     private static void reloadDeck() {
 
+        System.out.println("In reloadDeck");
+        System.out.println("   deck.size = " + deck.size());
+        System.out.println("   discardPile.size = " + discardPile.size());
         for (Card card : discardPile) {
-
+            cardCountRemaining++;
             deck.add(card);
-            Collections.shuffle(deck);
         }
+
+        Collections.shuffle(deck);
 
     }
 
@@ -69,7 +80,7 @@ class Deck {
     static void printPlayerDrawsFrom() {
         System.out.println("*******      *******************");
         System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peek());
-        System.out.println("*******      *******************");
+        System.out.println("**" + deck.size() + "***      *****" + discardPile.size() + "************");
     }
 
 

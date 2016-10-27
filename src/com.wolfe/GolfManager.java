@@ -112,6 +112,7 @@ public class GolfManager {
         Deck.discardPile.push(discard);
         System.out.println("GolfManager added card to discard pile");
 
+
     }
 
 
