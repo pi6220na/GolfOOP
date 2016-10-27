@@ -231,7 +231,7 @@ class Hand {
     void printHand(String name) {
 
         System.out.println();
-        System.out.println("entering printHand - ");
+        System.out.println("entering printHand - " + name);
 
         System.out.println("0    1    2");
         if (handArray.get(row1Left).getFacing().equals(UP)) System.out.print(handArray.get(row1Left) + "  ");

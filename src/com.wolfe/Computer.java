@@ -96,6 +96,14 @@ class Computer extends Player {
             if (loop == 1) {
                 newCard = Deck.discardPile.pop();
                 System.out.println("Computer popped a newCard from discardPile size= " + Deck.discardPile.size());
+
+                if (Deck.discardPile.size() > 50) {
+
+                    System.out.println("Stopping! discardPile size = " + Deck.discardPile.size());
+                    System.exit(-20);
+                }
+
+
             } else {
                 newCard = Deck.getACard();
                 System.out.println("Computer got a card from Deck size= " + Deck.deck.size());
@@ -105,10 +113,10 @@ class Computer extends Player {
 
             if (usedCard && loop == 1) {
                 System.out.println("Computer used Discard Logic");
-                break;
+                return;
             } else if (usedCard && loop == 2){
                 System.out.println("Computer used Deck Logic");
-                break;
+                return;
             }
 
         }
@@ -192,7 +200,7 @@ class Computer extends Player {
                 return Lower;
             }
 
-            /*
+
             // check if drawn card value lower than any showing UP card, if yes, replace with drawn card
             if (col == 1) {
                 OpenSlot = doDeckOpenSlotLogic(0, 3, newCard, indicator);
@@ -211,18 +219,23 @@ class Computer extends Player {
                 //break;
                 return OpenSlot;
             }
-           */
+
 
         }
 
         //if (!King2Found && !PairFormed && !Lower && !OpenSlot && indicator != 1) { // this line caused a subtle bug
         //                                                                           // of not populating discardPile
+
+        System.out.println(King2Found + " " + PairFormed + " " + Lower + " " + OpenSlot + " " + indicator);
+
+
+ //       if (indicator == 1) {
             System.out.println("Computer pushing newCard to disCardPile: " + newCard);
             Deck.discardPile.push(newCard);
             System.out.println("Computer moved newCard to discard pile because all four booleans false");
             System.out.println("   peeking at discard pile: " + Deck.discardPile.peek());
 
-        //}
+ //       }
 
         return false;
     }
@@ -367,7 +380,8 @@ class Computer extends Player {
     private boolean doDeckOpenSlotLogic(int row1Card, int row2Card, Card newCard, int indicator) {
 
         // don't care what the drawn card is at this point, replace any available open slot with it
-        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN)) {
+        if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
+                indicator == 2) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row1Card, newCard);
@@ -379,7 +393,8 @@ class Computer extends Player {
         }
 
         // don't care what the drawn card is at this point, replace any available open slot with it
-        if (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN)) {
+        if (hand.handArray.get(row2Card).getFacing().equals(Card.DOWN) &&
+                indicator == 2) {
 
             // method over-loaded
             Card returnedCard = hand.swapCard(row2Card, newCard);
