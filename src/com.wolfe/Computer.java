@@ -42,29 +42,32 @@ class Computer extends Player {
 
     }
 
-    /*
+
+
+
+    /*********** Comments for computer AI Game Play logic/stratagy ******************
+     *
      *      mark any existing pairs as off-limits
      *
      *      check for 2's and King's when doing below logic groups
      *
+     *  Two sub sections - a logic driver section which sets up for calls to the logic section - two components:
+     *                      first check against the showing discard, then check by pulling a card from the deck
      *
-     *  Two groups of computer logic: discard processing and draw a card from deck processing
-     *  They both do the same groups of logic checks/replacements.
+     *                   - a logic section that implements the actual logic checks and card manipulations
      *
-     *  examine discard group
+     *  The logic:
      *
-     *      if discard is 2 or K
+     *      if card is an Ace, 2 or K
      *          move to unpaired column or column with highest faceup card and get out
      *
      *      check for pairs, if can make a new pair, do it and get out
      *
      *      if discard is lower than any faceup card, replace highest faceup card and get out
      *
-     *   draw from deck group
+     *      last resort, replace any open slot (card facing down) without regard (or not much) for where
+     *      or what the card is
      *
-     *      check for pairs, if can make a new pair(don't replace an existing pair), do it and get out
-     *
-     *      replace highest faceup card
      *
      *   card column combinations
      *      card up
@@ -86,6 +89,7 @@ class Computer extends Player {
      *
       */
 
+    // main logic loop
     public void drawACard() {
 
 
@@ -124,7 +128,10 @@ class Computer extends Player {
     }
 
 
-    //  *************** Deck Logic Driver *******************
+    //  *************** Card Logic Driver *******************
+
+    // TODO should only use the indicator parameter where needed. Originally thought every routine would need it.
+
 
     @SuppressWarnings("ConstantConditions")
     private boolean doDeckGroupings(Card newCard, int indicator) { // indicator=1:discard, indicator=2:deck card
@@ -241,7 +248,7 @@ class Computer extends Player {
     }
 
 
-    //  *************** Deck Card Logic Section *******************
+    //  *************** Card Logic Section *******************
     //
     //  first time through, indicator = 1, processing discard
     //  second time through, indicator = 2, processing deck card
