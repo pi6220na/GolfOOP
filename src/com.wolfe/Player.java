@@ -42,7 +42,7 @@ abstract class Player {
 
 
         printAllPlayerHands(players);
-        Deck.printPlayerDrawsFrom();
+        Deck.printPlayerDrawsFrom(name);
 
         drawACard();
 
@@ -57,7 +57,7 @@ abstract class Player {
         }
 
         printAllPlayerHands(players);
-        Deck.printPlayerDrawsFrom();
+        Deck.printPlayerDrawsFrom(name);
 
     }
 

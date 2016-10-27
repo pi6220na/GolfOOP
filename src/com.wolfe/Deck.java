@@ -77,10 +77,10 @@ class Deck {
     }
 
 
-    static void printPlayerDrawsFrom() {
-        System.out.println("*******      *******************");
-        System.out.println("Deck(X)      Discard Pile(D): " + discardPile.peek());
-        System.out.println("**" + deck.size() + "***      *****" + discardPile.size() + "************");
+    static void printPlayerDrawsFrom(String name) {
+        System.out.println("*******      ********************");
+        System.out.println("Deck(X)  " + name + "  Discard Pile(D): " + discardPile.peek());
+        System.out.println("**" + deck.size() + "***      *****" + discardPile.size() + "*************");
     }
 
 
