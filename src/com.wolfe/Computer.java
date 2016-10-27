@@ -475,7 +475,7 @@ class Computer extends Player {
 
         // if deck card is a King or a 2 or an Ace... keep and find a home for it
         if (newCard.getSequence() != 1 && newCard.getSequence() != 13
-                && Deck.discardPile.peek().getSequence() != 2) {
+                && newCard.getSequence() != 2) {
 
             return false;
 
