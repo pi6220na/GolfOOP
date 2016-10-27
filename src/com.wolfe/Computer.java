@@ -215,13 +215,14 @@ class Computer extends Player {
 
         }
 
-        if (!King2Found && !PairFormed && !Lower && !OpenSlot && indicator != 1) {
+        //if (!King2Found && !PairFormed && !Lower && !OpenSlot && indicator != 1) { // this line caused a subtle bug
+        //                                                                           // of not populating discardPile
             System.out.println("Computer pushing newCard to disCardPile: " + newCard);
             Deck.discardPile.push(newCard);
             System.out.println("Computer moved newCard to discard pile because all four booleans false");
             System.out.println("   peeking at discard pile: " + Deck.discardPile.peek());
 
-        }
+        //}
 
         return false;
     }
