@@ -58,6 +58,7 @@ class Hand {
     }
 
 
+    // if all table (player hand) cards are face up, the round is over
     boolean checkCardStatus() {
 
         for (Card card : handArray) {
@@ -72,6 +73,7 @@ class Hand {
     }
 
 
+    // overloaded method - swaps out user selected card with table (player hand) card
     Card swapCard(String choice, Card drawnCard) {
 
         int location = Integer.parseInt(choice);
@@ -88,6 +90,7 @@ class Hand {
         return retCard;
     }
 
+    // overloaded method - swaps out user selected card with table (player hand) card
     Card swapCard(int location, Card drawnCard) {
 
         System.out.println("swapCard: location = " + location);
@@ -179,16 +182,16 @@ class Hand {
 
         switch (workCard) {
             case 0:
-                score = 0;
+                score = 0;  // set to zero if not eligible for counting
                 break;
             case 1:
-                score = 1;
+                score = 1;  // Ace
                 break;
             case 2:
-                score = -2;
+                score = -2; // Two
                 break;
             case 3:
-                score = 3;
+                score = 3;  // etc.
                 break;
             case 4:
                 score = 4;
@@ -212,13 +215,13 @@ class Hand {
                 score = 10;
                 break;
             case 11:
-                score = 10;
+                score = 10; // Joker
                 break;
             case 12:
-                score = 10;
+                score = 10; // Queen
                 break;
             case 13:
-                score = 0;
+                score = 0;  // King
                 break;
             default:
                 System.out.println("error in scoring routine");

@@ -18,6 +18,8 @@
  *
  *  Rules of game: http://www.bicyclecards.com/how-to-play/six-card-golf/
  *
+ *  Can have any combination of players: Human or Computer up to four players total
+ *
  *
  */
 package com.wolfe;
@@ -61,7 +63,7 @@ public class GolfManager {
                 int playerIndex = playerPlaysQueue.pop(); // get next player from queue
                 Player currentPlayer = players.get(playerIndex);
 
-                currentPlayer.playRound(players);
+                currentPlayer.playTurn(players);
 
                 playerPlaysQueue.add(playerIndex); // put player back to end of queue
 
@@ -78,7 +80,7 @@ public class GolfManager {
             }
 
 
-        } while (numberOfRoundsPlayed < 2);  // regulation game is nine rounds
+        } while (numberOfRoundsPlayed < 9);  // regulation game is nine rounds
 
 
         System.out.println();

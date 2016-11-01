@@ -47,26 +47,26 @@ class Computer extends Player {
 
     /*********** Comments for computer AI Game Play logic/stratagy ******************
      *
-     *      mark any existing pairs as off-limits
-     *
-     *      check for 2's and King's when doing below logic groups
-     *
-     *  Two sub sections - a logic driver section which sets up for calls to the logic section - two components:
+     *  Two sub sections - a logic driver section which sets up for calls to the logic section - two iterations:
      *                      first check against the showing discard, then check by pulling a card from the deck
      *
      *                   - a logic section that implements the actual logic checks and card manipulations
      *
+     *                   - logic dependant on a fall-through structure in the driver section
+     *
      *  The logic:
      *
-     *      if card is an Ace, 2 or K
+     *      four sub-sections:
+     *
+     *    -  if card is an Ace, 2 or K
      *          move to unpaired column or column with highest faceup card and get out
      *
-     *      check for pairs, if can make a new pair, do it and get out
+     *    -  check for pairs, if can make a new pair, do it and get out
      *
-     *      if discard is lower than any faceup card, replace highest faceup card and get out
+     *    -  if discard is lower than any faceup card, replace highest faceup card and get out
      *
-     *      last resort, replace any open slot (card facing down) without regard (or not much) for where
-     *      or what the card is
+     *    -  last resort, replace any open slot (card facing down) without regard (or not much) for where
+     *          or what the card is
      *
      *
      *   card column combinations
@@ -102,7 +102,8 @@ class Computer extends Player {
                 System.out.println("Computer popped a newCard from discardPile size= " + Deck.discardPile.size());
 
                 if (Deck.discardPile.size() > 50) {
-
+                    // catches a run-a-way bug that was creating a deck and discard pile with cards in the 1000's
+                    // bug fixed, but just in case
                     System.out.println("Stopping! discardPile size = " + Deck.discardPile.size());
                     System.exit(-20);
                 }
@@ -113,7 +114,7 @@ class Computer extends Player {
                 System.out.println("Computer got a card from Deck size= " + Deck.deck.size());
             }
 
-            boolean usedCard = doDeckGroupings(newCard, loop); // loop=1:discard, loop=2:deck card
+            boolean usedCard = doLogicGroups(newCard, loop); // loop=1:discard, loop=2:deck card
 
             if (usedCard && loop == 1) {
                 System.out.println("Computer used Discard Logic");
@@ -134,10 +135,10 @@ class Computer extends Player {
 
 
     @SuppressWarnings("ConstantConditions")
-    private boolean doDeckGroupings(Card newCard, int indicator) { // indicator=1:discard, indicator=2:deck card
+    private boolean doLogicGroups(Card newCard, int indicator) { // indicator=1:discard, indicator=2:deck card
 
         boolean PairFormed = false;
-        boolean King2Found = false;
+        boolean Ace2KingFound = false;
         boolean Lower = false;
         boolean OpenSlot = false;
 
@@ -149,31 +150,31 @@ class Computer extends Player {
 
             // perform King/2 card logic
             if (col == 1) {
-                King2Found = doCardKing2DeckLogic(0, 3, newCard, indicator);
+                Ace2KingFound = doAce2KingLogic(0, 3, newCard, indicator);
             } else if (col == 2) {
-                King2Found = doCardKing2DeckLogic(1, 4, newCard, indicator);
+                Ace2KingFound = doAce2KingLogic(1, 4, newCard, indicator);
             } else if (col == 3) {
-                King2Found = doCardKing2DeckLogic(2, 5, newCard, indicator);
+                Ace2KingFound = doAce2KingLogic(2, 5, newCard, indicator);
             }
 
-            if (King2Found) {
+            if (Ace2KingFound) {
                 if (indicator == 1) {
                     System.out.println("Computer used discard card of Ace, 2 or King");
                 } else {
                     System.out.println("Computer used deck card of Ace, 2 or King");
                 }
                 //break;
-                return King2Found;
+                return Ace2KingFound;
             }
 
 
             // perform pairs of cards logic
             if (col == 1) {
-                PairFormed = doCardPairDeckLogic(0, 3, newCard, indicator);
+                PairFormed = doPairLogic(0, 3, newCard, indicator);
             } else if (col == 2) {
-                PairFormed = doCardPairDeckLogic(1, 4, newCard, indicator);
+                PairFormed = doPairLogic(1, 4, newCard, indicator);
             } else if (col == 3) {
-                PairFormed = doCardPairDeckLogic(2, 5, newCard, indicator);
+                PairFormed = doPairLogic(2, 5, newCard, indicator);
             }
 
             if (PairFormed) {
@@ -188,11 +189,11 @@ class Computer extends Player {
 
             // check if discard value lower than any showing UP card, if yes, replace with discard
             if (col == 1) {
-                Lower = doDeckLogic(0, 3, newCard, indicator);
+                Lower = doHighCardLogic(0, 3, newCard, indicator);
             } else if (col == 2) {
-                Lower = doDeckLogic(1, 4, newCard, indicator);
+                Lower = doHighCardLogic(1, 4, newCard, indicator);
             } else if (col == 3) {
-                Lower = doDeckLogic(2, 5, newCard, indicator);
+                Lower = doHighCardLogic(2, 5, newCard, indicator);
             }
 
             if (Lower) {
@@ -210,11 +211,11 @@ class Computer extends Player {
 
             // check if drawn card value lower than any showing UP card, if yes, replace with drawn card
             if (col == 1) {
-                OpenSlot = doDeckOpenSlotLogic(0, 3, newCard, indicator);
+                OpenSlot = doOpenSlotLogic(0, 3, newCard, indicator);
             } else if (col == 2) {
-                OpenSlot = doDeckOpenSlotLogic(1, 4, newCard, indicator);
+                OpenSlot = doOpenSlotLogic(1, 4, newCard, indicator);
             } else if (col == 3) {
-                OpenSlot = doDeckOpenSlotLogic(2, 5, newCard, indicator);
+                OpenSlot = doOpenSlotLogic(2, 5, newCard, indicator);
             }
 
             if (OpenSlot) {
@@ -230,10 +231,10 @@ class Computer extends Player {
 
         }
 
-        //if (!King2Found && !PairFormed && !Lower && !OpenSlot && indicator != 1) { // this line caused a subtle bug
+        //if (!Ace2KingFound && !PairFormed && !Lower && !OpenSlot && indicator != 1) { // this line caused a subtle bug
         //                                                                           // of not populating discardPile
 
-        System.out.println(King2Found + " " + PairFormed + " " + Lower + " " + OpenSlot + " " + indicator);
+        System.out.println(Ace2KingFound + " " + PairFormed + " " + Lower + " " + OpenSlot + " " + indicator);
 
 
  //       if (indicator == 1) {
@@ -254,7 +255,7 @@ class Computer extends Player {
     //  second time through, indicator = 2, processing deck card
 
 
-    private boolean doCardKing2DeckLogic(int row1Card, int row2Card, Card newCard, int indicator) {
+    private boolean doAce2KingLogic(int row1Card, int row2Card, Card newCard, int indicator) {
 
         // if deck card is a King or a 2 or an Ace... keep and find a home for it
         if (newCard.getSequence() != 1 && newCard.getSequence() != 13
@@ -304,7 +305,7 @@ class Computer extends Player {
     }
 
 
-    private boolean doCardPairDeckLogic(int row1Card, int row2Card, Card newCard, int indicator) {
+    private boolean doPairLogic(int row1Card, int row2Card, Card newCard, int indicator) {
 
         // matching pair showing, don't process this pair, leave it alone
         if ((hand.handArray.get(row1Card).getFacing().equals(Card.UP) &&
@@ -350,7 +351,7 @@ class Computer extends Player {
     }
 
 
-    private boolean doDeckLogic(int row1Card, int row2Card, Card newCard, int indicator) {
+    private boolean doHighCardLogic(int row1Card, int row2Card, Card newCard, int indicator) {
 
         // don't care about DOWN cards for this method (can't check against discard, unless we cheat :) )
 
@@ -384,7 +385,8 @@ class Computer extends Player {
         return false;
     }
 
-    private boolean doDeckOpenSlotLogic(int row1Card, int row2Card, Card newCard, int indicator) {
+    // only apply if second time through-e.g. indicator = 2 - we're at the last chance to change
+    private boolean doOpenSlotLogic(int row1Card, int row2Card, Card newCard, int indicator) {
 
         // don't care what the drawn card is at this point, replace any available open slot with it
         if (hand.handArray.get(row1Card).getFacing().equals(Card.DOWN) &&
@@ -432,8 +434,6 @@ class Computer extends Player {
 
         return maxCard;
     }
-
-
 
 
 } // end Class Computer

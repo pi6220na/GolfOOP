@@ -14,7 +14,7 @@ public class Human extends Player {
 
     }
 
-
+    // new deal setup at the start of each round, turns up two of six card facing down
     public void turnUpTwo() {
 
         int turnFirst;
@@ -45,6 +45,7 @@ public class Human extends Player {
         hand.printHand(name);
     }
 
+    // asks user what they want to do and swaps out card(s) as needed
     public void drawACard() {
 
         System.out.println("Entering drawACard in human class");
@@ -78,6 +79,7 @@ public class Human extends Player {
 
     }
 
+    // swaps out user's choice from discard or deck with a card on the table (player hand)
     private void swapOutCard(String choice, Card drawnCard) {
 
         if (choice.equals("0") || choice.equals("1") || choice.equals("2") || choice.equals("3")

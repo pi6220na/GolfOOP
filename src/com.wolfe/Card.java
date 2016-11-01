@@ -41,7 +41,7 @@ public class Card {
     private static final String DIAMONDS = "D";
     private static final String SPADES = "S";
 
-    // text coloring code from Java MCTC Class
+    // copied text coloring code from Java MCTC Class - works in conjunction with ColorPrinter
     private static final char spadeCh = 9824;  // Unicode characters for playing card symbols
     private static final char clubCh = 9827;
     private static final char heartCh = 9829;

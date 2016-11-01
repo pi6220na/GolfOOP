@@ -21,8 +21,8 @@ class Deck {
     private static int cardCountRemaining = 52;
 
     //static HashMap<Integer,Card> deck = new TreeMap<>();
-    static ArrayList<Card> deck = new ArrayList<>();
-    static LinkedList<Card> discardPile = new LinkedList<>();   // stack
+    static ArrayList<Card> deck = new ArrayList<>();            // array of Cards
+    static LinkedList<Card> discardPile = new LinkedList<>();   // stack structure used with this linked list
 
     public static void buildDeck() {
         deck = new ArrayList<>();
@@ -55,6 +55,7 @@ class Deck {
                 cardCountRemaining--;
                 return deck.remove(0);
             } else {
+                // shouldn't hit this, bug fixed, but... just in case
                 System.out.println("Major problem with deck running out of cards");
                 System.exit(-5);
             }

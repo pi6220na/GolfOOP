@@ -35,7 +35,8 @@ abstract class Player {
     }
 
 
-    void playRound(ArrayList<Player> players) {
+    // plays the player's current turn
+    void playTurn(ArrayList<Player> players) {
 
         System.out.println();
         System.out.println("****** Play a Turn ****** Player " + name);
@@ -61,6 +62,7 @@ abstract class Player {
 
     }
 
+    // as a convenience to the current, show all players current hand (table) cards for each turn
     private void printAllPlayerHands(ArrayList<Player> players) {
 
         for (Player player : players) {
@@ -80,6 +82,7 @@ abstract class Player {
 
     }
 
+    // check for end of round if all card are up
     private void checkCardUpStatus() {
 
         GolfManager.allCardsUp = hand.checkCardStatus();
@@ -95,10 +98,10 @@ abstract class Player {
 
     }
 
-    public abstract void turnUpTwo();
+    public abstract void turnUpTwo();  // force subclass to implement
 
 
-    protected abstract void drawACard();
+    protected abstract void drawACard();  // force subclass to implement
 
 
 }// end class Player
