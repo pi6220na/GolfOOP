@@ -80,7 +80,7 @@ public class GolfManager {
             }
 
 
-        } while (numberOfRoundsPlayed < 9);  // regulation game is nine rounds
+        } while (numberOfRoundsPlayed < 2);  // regulation game is nine rounds
 
 
         System.out.println();

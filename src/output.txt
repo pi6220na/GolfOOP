@@ -1,0 +1,4178 @@
+"C:\Program Files\Java\jdk1.8.0_101\bin\java" -Didea.launcher.port=7532 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_101\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\rt.jar;C:\Users\myrlin\IdeaProjects\GolfOOP\out\production\GolfOOP;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\lib\groovy-all-2.4.6.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\lib\junit-4.12.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.2.2\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain com.wolfe.GolfManager
+Enter the number of players (2 thru 4):
+4
+Enter Player Name:
+P1
+Enter Player Type (C for computer, H for human):
+C
+Enter Player Name:
+P2
+Enter Player Type (C for computer, H for human):
+C
+Enter Player Name:
+P3
+Enter Player Type (C for computer, H for human):
+C
+Enter Player Name:
+P4
+Enter Player Type (C for computer, H for human):
+C
+
+******  Set Up Start of Round  ******
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P1
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 4
+Random generator number 0 - 6 = 0
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   J♦  xx
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P2
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 1
+Random generator number 0 - 6 = 1
+
+entering printHand - P2
+0    1    2
+xx   9♥  A♠
+3    4    5
+xx   xx   xx
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P3
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 0
+Random generator number 0 - 6 = 0
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+xx   xx   xx
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 3
+Random generator number 0 - 6 = 1
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+GolfManager added card to discard pile
+****** Start of Round ******
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   J♦  xx
+Score for up cards = 11
+
+entering printHand - P2
+0    1    2
+xx   9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 10
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+xx   xx   xx
+Score for up cards = 13
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 6♣
+**27***      *****1*************
+Computer popped a newCard from discardPile size= 0
+swapCard: location = 4
+swapCard: drawnCard = 6♣
+swapCard: replacing Card = J♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+xx   9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 10
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+xx   xx   xx
+Score for up cards = 13
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P1  Discard Pile(D): J♦
+**27***      *****1*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+xx   9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 10
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+xx   xx   xx
+Score for up cards = 13
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P2  Discard Pile(D): J♦
+**27***      *****1*************
+Computer popped a newCard from discardPile size= 0
+false false false false 1
+Computer pushing newCard to disCardPile: J♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: J♦
+Computer got a card from Deck size= 26
+swapCard: location = 0
+swapCard: drawnCard = Q♦
+swapCard: replacing Card = 2♦
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+xx   xx   xx
+Score for up cards = 13
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 2♦
+**26***      *****2*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+xx   xx   xx
+Score for up cards = 13
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 2♦
+**26***      *****2*************
+Computer popped a newCard from discardPile size= 1
+swapCard: location = 3
+swapCard: drawnCard = 2♦
+swapCard: replacing Card = K♥
+Computer used discard card of Ace, 2 or King
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P3  Discard Pile(D): K♥
+**26***      *****2*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+xx   2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P4  Discard Pile(D): K♥
+**26***      *****2*************
+Computer popped a newCard from discardPile size= 1
+swapCard: location = 0
+swapCard: drawnCard = K♥
+swapCard: replacing Card = J♠
+Computer used discard card of Ace, 2 or King
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P4  Discard Pile(D): J♠
+**26***      *****2*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+xx   6♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P1  Discard Pile(D): J♠
+**26***      *****2*************
+Computer popped a newCard from discardPile size= 1
+false false false false 1
+Computer pushing newCard to disCardPile: J♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: J♠
+Computer got a card from Deck size= 25
+swapCard: location = 3
+swapCard: drawnCard = 10♦
+swapCard: replacing Card = A♦
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P1  Discard Pile(D): A♦
+**25***      *****3*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+xx   xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P2  Discard Pile(D): A♦
+**25***      *****3*************
+Computer popped a newCard from discardPile size= 2
+swapCard: location = 3
+swapCard: drawnCard = A♦
+swapCard: replacing Card = 7♠
+Computer used discard card of Ace, 2 or King
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 7♠
+**25***      *****3*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+10♣  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 11
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 7♠
+**25***      *****3*************
+Computer popped a newCard from discardPile size= 2
+swapCard: location = 0
+swapCard: drawnCard = 7♠
+swapCard: replacing Card = 10♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 10♣
+**25***      *****3*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+9♦  xx   xx
+Score for up cards = 7
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 10♣
+**25***      *****3*************
+Computer popped a newCard from discardPile size= 2
+false false false false 1
+Computer pushing newCard to disCardPile: 10♣
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 10♣
+Computer got a card from Deck size= 24
+swapCard: location = 3
+swapCard: drawnCard = 8♣
+swapCard: replacing Card = 9♦
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 9♦
+**24***      *****4*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+10♦  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 9♦
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+swapCard: location = 3
+swapCard: drawnCard = 9♦
+swapCard: replacing Card = 10♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 10♦
+**24***      *****4*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+Q♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 10♦
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+swapCard: location = 0
+swapCard: drawnCard = 10♦
+swapCard: replacing Card = Q♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P2  Discard Pile(D): Q♦
+**24***      *****4*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  xx   3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P3  Discard Pile(D): Q♦
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+false false false false 1
+Computer pushing newCard to disCardPile: Q♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: Q♦
+Computer got a card from Deck size= 23
+swapCard: location = 1
+swapCard: drawnCard = K♣
+swapCard: replacing Card = 7♥
+Computer used deck card of Ace, 2 or King
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 7♥
+**23***      *****5*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+8♣  xx   xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 7♥
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+swapCard: location = 3
+swapCard: drawnCard = 7♥
+swapCard: replacing Card = 8♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 8♣
+**23***      *****5*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+9♦  6♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 8♣
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+swapCard: location = 3
+swapCard: drawnCard = 8♣
+swapCard: replacing Card = 9♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 9♦
+**23***      *****5*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+10♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 21
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 9♦
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+swapCard: location = 0
+swapCard: drawnCard = 9♦
+swapCard: replacing Card = 10♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 10♦
+**23***      *****5*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+7♠  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 8
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 10♦
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+false false false false 1
+Computer pushing newCard to disCardPile: 10♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 10♦
+Computer got a card from Deck size= 22
+swapCard: location = 0
+swapCard: drawnCard = 4♦
+swapCard: replacing Card = 7♠
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 7♠
+**22***      *****6*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+7♥  xx   xx
+Score for up cards = 5
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 7♠
+**22***      *****6*************
+Computer popped a newCard from discardPile size= 5
+false false false false 1
+Computer pushing newCard to disCardPile: 7♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 7♠
+Computer got a card from Deck size= 21
+swapCard: location = 3
+swapCard: drawnCard = 3♣
+swapCard: replacing Card = 7♥
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 7♥
+**21***      *****7*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+8♣  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 7♥
+**21***      *****7*************
+Computer popped a newCard from discardPile size= 6
+swapCard: location = 3
+swapCard: drawnCard = 7♥
+swapCard: replacing Card = 8♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 8♣
+**21***      *****7*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+9♦  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 20
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 8♣
+**21***      *****7*************
+Computer popped a newCard from discardPile size= 6
+swapCard: location = 0
+swapCard: drawnCard = 8♣
+swapCard: replacing Card = 9♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 9♦
+**21***      *****7*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 9♦
+**21***      *****7*************
+Computer popped a newCard from discardPile size= 6
+false false false false 1
+Computer pushing newCard to disCardPile: 9♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 9♦
+Computer got a card from Deck size= 20
+swapCard: location = 4
+swapCard: drawnCard = Q♣
+swapCard: replacing Card = 8♥
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 8♥
+**20***      *****8*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  xx   xx
+Score for up cards = 1
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 8♥
+**20***      *****8*************
+Computer popped a newCard from discardPile size= 7
+false false false false 1
+Computer pushing newCard to disCardPile: 8♥
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 8♥
+Computer got a card from Deck size= 19
+swapCard: location = 4
+swapCard: drawnCard = 8♦
+swapCard: replacing Card = 3♠
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 3♠
+**19***      *****9*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+7♥  6♣  xx
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 3♠
+**19***      *****9*************
+Computer popped a newCard from discardPile size= 8
+swapCard: location = 3
+swapCard: drawnCard = 3♠
+swapCard: replacing Card = 7♥
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 7♥
+**19***      *****9*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  9♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 19
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 7♥
+**19***      *****9*************
+Computer popped a newCard from discardPile size= 8
+swapCard: location = 1
+swapCard: drawnCard = 7♥
+swapCard: replacing Card = 9♥
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 9♥
+**19***      *****9*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  Q♣  xx
+Score for up cards = 15
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 9♥
+**19***      *****9*************
+Computer popped a newCard from discardPile size= 8
+swapCard: location = 4
+swapCard: drawnCard = 9♥
+swapCard: replacing Card = Q♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P3  Discard Pile(D): Q♣
+**19***      *****9*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  8♦  xx
+Score for up cards = 9
+*******      ********************
+Deck(X)  P4  Discard Pile(D): Q♣
+**19***      *****9*************
+Computer popped a newCard from discardPile size= 8
+false false false false 1
+Computer pushing newCard to disCardPile: Q♣
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: Q♣
+Computer got a card from Deck size= 18
+swapCard: location = 4
+swapCard: drawnCard = 5♠
+swapCard: replacing Card = 8♦
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 8♦
+**18***      *****10*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  xx   xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 10
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 8♦
+**18***      *****10*************
+Computer popped a newCard from discardPile size= 9
+false false false false 1
+Computer pushing newCard to disCardPile: 8♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 8♦
+Computer got a card from Deck size= 17
+swapCard: location = 1
+swapCard: drawnCard = 7♦
+swapCard: replacing Card = 9♣
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 9♣
+**17***      *****11*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  xx   xx
+Score for up cards = 17
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 9♣
+**17***      *****11*************
+Computer popped a newCard from discardPile size= 10
+false false false false 1
+Computer pushing newCard to disCardPile: 9♣
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 9♣
+Computer got a card from Deck size= 16
+swapCard: location = 4
+swapCard: drawnCard = 10♠
+swapCard: replacing Card = 5♥
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 5♥
+**16***      *****12*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  9♥  xx
+Score for up cards = 14
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 5♥
+**16***      *****12*************
+Computer popped a newCard from discardPile size= 11
+swapCard: location = 4
+swapCard: drawnCard = 5♥
+swapCard: replacing Card = 9♥
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 9♥
+**16***      *****12*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  5♠  xx
+Score for up cards = 6
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 9♥
+**16***      *****12*************
+Computer popped a newCard from discardPile size= 11
+false false false false 1
+Computer pushing newCard to disCardPile: 9♥
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 9♥
+Computer got a card from Deck size= 15
+swapCard: location = 4
+swapCard: drawnCard = 2♥
+swapCard: replacing Card = 5♠
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  2♥  xx
+Score for up cards = 3
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 5♠
+**15***      *****13*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+A♣  7♦  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 17
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  2♥  xx
+Score for up cards = 3
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 5♠
+**15***      *****13*************
+Computer popped a newCard from discardPile size= 12
+swapCard: location = 1
+swapCard: drawnCard = 5♠
+swapCard: replacing Card = 7♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  5♠  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  2♥  xx
+Score for up cards = 3
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 7♦
+**15***      *****13*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+A♣  5♠  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  10♠  xx
+Score for up cards = 27
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  2♥  xx
+Score for up cards = 3
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 7♦
+**15***      *****13*************
+Computer popped a newCard from discardPile size= 12
+swapCard: location = 4
+swapCard: drawnCard = 7♦
+swapCard: replacing Card = 10♠
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+A♣  5♠  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  7♦  xx
+Score for up cards = 10
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  2♥  xx
+Score for up cards = 3
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 10♠
+**15***      *****13*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+A♣  5♠  xx
+3    4    5
+3♠  6♣  xx
+Score for up cards = 15
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  7♦  xx
+Score for up cards = 10
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  xx
+Score for up cards = 10
+
+entering printHand - P4
+0    1    2
+K♥  2♠  xx
+3    4    5
+3♣  2♥  xx
+Score for up cards = 3
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 10♠
+**15***      *****13*************
+Computer popped a newCard from discardPile size= 12
+false false false false 1
+Computer pushing newCard to disCardPile: 10♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 10♠
+Computer got a card from Deck size= 14
+swapCard: location = 5
+swapCard: drawnCard = 10♥
+swapCard: replacing Card = 3♥
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning true
+
+entering printHand - P1
+0    1    2
+A♣  5♠  Q♥
+3    4    5
+3♠  6♣  4♥
+Score for up cards = 29
+
+entering printHand - P2
+0    1    2
+8♣  7♥  A♠
+3    4    5
+A♦  7♦  6♠
+Score for up cards = 16
+
+entering printHand - P3
+0    1    2
+4♦  K♣  3♦
+3    4    5
+2♦  5♥  10♥
+Score for up cards = 20
+
+entering printHand - P4
+0    1    2
+K♥  2♠  6♦
+3    4    5
+3♣  2♥  J♥
+Score for up cards = 19
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 3♥
+**14***      *****14*************
+
+played test round #1
+Player: P1 round score: 29
+Player: P1 total score: 29
+Player: P2 round score: 16
+Player: P2 total score: 16
+Player: P3 round score: 20
+Player: P3 total score: 20
+Player: P4 round score: 19
+Player: P4 total score: 19
+
+******  Set Up Start of Round  ******
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P1
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 4
+Random generator number 0 - 6 = 3
+
+entering printHand - P1
+0    1    2
+xx   xx   xx
+3    4    5
+5♣  8♠  xx
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P2
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 4
+Random generator number 0 - 6 = 1
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   10♠  xx
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P3
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 0
+Random generator number 0 - 6 = 1
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+entering buildNewHand
+   GolfManager.dealCount = 6
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+xx   xx   xx
+turnUpTwo method in computer sub class
+Random generator number 0 - 6 = 3
+Random generator number 0 - 6 = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+J♥  xx   A♥
+GolfManager added card to discard pile
+****** Start of Round ******
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+xx   xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 13
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   10♠  xx
+Score for up cards = 15
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+J♥  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 7♠
+**27***      *****1*************
+Computer popped a newCard from discardPile size= 0
+swapCard: location = 3
+swapCard: drawnCard = 7♠
+swapCard: replacing Card = J♥
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+xx   xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 13
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   10♠  xx
+Score for up cards = 15
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P4  Discard Pile(D): J♥
+**27***      *****1*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+xx   xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 13
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   10♠  xx
+Score for up cards = 15
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P1  Discard Pile(D): J♥
+**27***      *****1*************
+Computer popped a newCard from discardPile size= 0
+false false false false 1
+Computer pushing newCard to disCardPile: J♥
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: J♥
+Computer got a card from Deck size= 26
+swapCard: location = 0
+swapCard: drawnCard = J♠
+swapCard: replacing Card = 5♥
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   10♠  xx
+Score for up cards = 15
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 5♥
+**26***      *****2*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   10♠  xx
+Score for up cards = 15
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 5♥
+**26***      *****2*************
+Computer popped a newCard from discardPile size= 1
+swapCard: location = 4
+swapCard: drawnCard = 5♥
+swapCard: replacing Card = 10♠
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 10♠
+**26***      *****2*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+xx   xx   xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 10♠
+**26***      *****2*************
+Computer popped a newCard from discardPile size= 1
+false false false false 1
+Computer pushing newCard to disCardPile: 10♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 10♠
+Computer got a card from Deck size= 25
+swapCard: location = 3
+swapCard: drawnCard = 2♣
+swapCard: replacing Card = K♦
+Computer used deck card of Ace, 2 or King
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P3  Discard Pile(D): K♦
+**25***      *****3*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+xx   xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P4  Discard Pile(D): K♦
+**25***      *****3*************
+Computer popped a newCard from discardPile size= 2
+swapCard: location = 0
+swapCard: drawnCard = K♦
+swapCard: replacing Card = 8♦
+Computer used discard card of Ace, 2 or King
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 8♦
+**25***      *****3*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+J♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 23
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 8♦
+**25***      *****3*************
+Computer popped a newCard from discardPile size= 2
+swapCard: location = 0
+swapCard: drawnCard = 8♦
+swapCard: replacing Card = J♠
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P1  Discard Pile(D): J♠
+**25***      *****3*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+xx   5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 0
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P2  Discard Pile(D): J♠
+**25***      *****3*************
+Computer popped a newCard from discardPile size= 2
+false false false false 1
+Computer pushing newCard to disCardPile: J♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: J♠
+Computer got a card from Deck size= 24
+swapCard: location = 0
+swapCard: drawnCard = A♠
+swapCard: replacing Card = 3♣
+Computer used deck card of Ace, 2 or King
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 3♣
+**24***      *****4*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+4♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 3
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 3♣
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+swapCard: location = 0
+swapCard: drawnCard = 3♣
+swapCard: replacing Card = 4♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 4♣
+**24***      *****4*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+7♠  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 4♣
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+swapCard: location = 3
+swapCard: drawnCard = 4♣
+swapCard: replacing Card = 7♠
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 7♠
+**24***      *****4*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+8♦  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 21
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 7♠
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+swapCard: location = 0
+swapCard: drawnCard = 7♠
+swapCard: replacing Card = 8♦
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 8♦
+**24***      *****4*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+xx   5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 8♦
+**24***      *****4*************
+Computer popped a newCard from discardPile size= 3
+false false false false 1
+Computer pushing newCard to disCardPile: 8♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 8♦
+Computer got a card from Deck size= 23
+swapCard: location = 3
+swapCard: drawnCard = K♥
+swapCard: replacing Card = 2♦
+Computer used deck card of Ace, 2 or King
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 2♦
+**23***      *****5*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+3♣  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 2
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 2♦
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+swapCard: location = 0
+swapCard: drawnCard = 2♦
+swapCard: replacing Card = 3♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 3♣
+**23***      *****5*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+4♣  xx   A♥
+Score for up cards = 5
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 3♣
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+swapCard: location = 3
+swapCard: drawnCard = 3♣
+swapCard: replacing Card = 4♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 4♣
+**23***      *****5*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  8♠  xx
+Score for up cards = 20
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 4♣
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+swapCard: location = 4
+swapCard: drawnCard = 4♣
+swapCard: replacing Card = 8♠
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 8♠
+**23***      *****5*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  xx
+3    4    5
+K♥  5♥  xx
+Score for up cards = 1
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 8♠
+**23***      *****5*************
+Computer popped a newCard from discardPile size= 4
+false false false false 1
+Computer pushing newCard to disCardPile: 8♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 8♠
+Computer got a card from Deck size= 22
+swapCard: location = 2
+swapCard: drawnCard = Q♥
+swapCard: replacing Card = 6♣
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 6♣
+**22***      *****6*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  xx   xx
+Score for up cards = 1
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 6♣
+**22***      *****6*************
+Computer popped a newCard from discardPile size= 5
+false false false false 1
+Computer pushing newCard to disCardPile: 6♣
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 6♣
+Computer got a card from Deck size= 21
+swapCard: location = 4
+swapCard: drawnCard = 4♠
+swapCard: replacing Card = 3♦
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 3♦
+**21***      *****7*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  xx   xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 4
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 3♦
+**21***      *****7*************
+Computer popped a newCard from discardPile size= 6
+false false false false 1
+Computer pushing newCard to disCardPile: 3♦
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 3♦
+Computer got a card from Deck size= 20
+swapCard: location = 1
+swapCard: drawnCard = 7♣
+swapCard: replacing Card = 9♠
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 9♠
+**20***      *****8*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+7♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 9♠
+**20***      *****8*************
+Computer popped a newCard from discardPile size= 7
+false false false false 1
+Computer pushing newCard to disCardPile: 9♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 9♠
+Computer got a card from Deck size= 19
+swapCard: location = 0
+swapCard: drawnCard = 2♠
+swapCard: replacing Card = 7♠
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 7♠
+**19***      *****9*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  Q♥
+3    4    5
+K♥  5♥  xx
+Score for up cards = 11
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 7♠
+**19***      *****9*************
+Computer popped a newCard from discardPile size= 8
+swapCard: location = 2
+swapCard: drawnCard = 7♠
+swapCard: replacing Card = Q♥
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P2  Discard Pile(D): Q♥
+**19***      *****9*************
+
+****** Play a Turn ****** Player P3
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  4♠  xx
+Score for up cards = 5
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P3  Discard Pile(D): Q♥
+**19***      *****9*************
+Computer popped a newCard from discardPile size= 8
+false false false false 1
+Computer pushing newCard to disCardPile: Q♥
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: Q♥
+Computer got a card from Deck size= 18
+swapCard: location = 4
+swapCard: drawnCard = A♣
+swapCard: replacing Card = 4♠
+Computer swapped out deck card because it was lower value
+   than card it replaced
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  A♣  xx
+Score for up cards = 0
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P3  Discard Pile(D): 4♠
+**18***      *****10*************
+
+****** Play a Turn ****** Player P4
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  A♣  xx
+Score for up cards = 0
+
+entering printHand - P4
+0    1    2
+K♦  7♣  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 11
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 4♠
+**18***      *****10*************
+Computer popped a newCard from discardPile size= 9
+swapCard: location = 1
+swapCard: drawnCard = 4♠
+swapCard: replacing Card = 7♣
+Computer swapped out discard because it was lower value
+   than card it replaced
+Computer used Discard Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  A♣  xx
+Score for up cards = 0
+
+entering printHand - P4
+0    1    2
+K♦  4♠  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P4  Discard Pile(D): 7♣
+**18***      *****10*************
+
+****** Play a Turn ****** Player P1
+
+entering printHand - P1
+0    1    2
+2♠  xx   xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 7
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  A♣  xx
+Score for up cards = 0
+
+entering printHand - P4
+0    1    2
+K♦  4♠  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P1  Discard Pile(D): 7♣
+**18***      *****10*************
+Computer popped a newCard from discardPile size= 9
+false false false false 1
+Computer pushing newCard to disCardPile: 7♣
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: 7♣
+Computer got a card from Deck size= 17
+swapCard: location = 1
+swapCard: drawnCard = 9♥
+swapCard: replacing Card = Q♠
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning false
+
+entering printHand - P1
+0    1    2
+2♠  9♥  xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  A♣  xx
+Score for up cards = 0
+
+entering printHand - P4
+0    1    2
+K♦  4♠  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P1  Discard Pile(D): Q♠
+**17***      *****11*************
+
+****** Play a Turn ****** Player P2
+
+entering printHand - P1
+0    1    2
+2♠  9♥  xx
+3    4    5
+5♣  4♣  xx
+Score for up cards = 16
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  xx
+Score for up cards = 8
+
+entering printHand - P3
+0    1    2
+2♦  A♦  xx
+3    4    5
+2♣  A♣  xx
+Score for up cards = 0
+
+entering printHand - P4
+0    1    2
+K♦  4♠  xx
+3    4    5
+3♣  xx   A♥
+Score for up cards = 8
+*******      ********************
+Deck(X)  P2  Discard Pile(D): Q♠
+**17***      *****11*************
+Computer popped a newCard from discardPile size= 10
+false false false false 1
+Computer pushing newCard to disCardPile: Q♠
+Computer moved newCard to discard pile because all four booleans false
+   peeking at discard pile: Q♠
+Computer got a card from Deck size= 16
+swapCard: location = 5
+swapCard: drawnCard = J♦
+swapCard: replacing Card = 4♦
+Computer swapped out deck card because there was an available slot
+Computer used Deck Logic
+checkCardUpStatus returning true
+
+entering printHand - P1
+0    1    2
+2♠  9♥  2♥
+3    4    5
+5♣  4♣  K♠
+Score for up cards = 14
+
+entering printHand - P2
+0    1    2
+A♠  5♦  7♠
+3    4    5
+K♥  5♥  J♦
+Score for up cards = 18
+
+entering printHand - P3
+0    1    2
+2♦  A♦  7♦
+3    4    5
+2♣  A♣  K♣
+Score for up cards = 7
+
+entering printHand - P4
+0    1    2
+K♦  4♠  10♥
+3    4    5
+3♣  10♣  A♥
+Score for up cards = 28
+*******      ********************
+Deck(X)  P2  Discard Pile(D): 4♦
+**16***      *****12*************
+
+played test round #2
+Player: P1 round score: 14
+Player: P1 total score: 43
+Player: P2 round score: 18
+Player: P2 total score: 34
+Player: P3 round score: 7
+Player: P3 total score: 27
+Player: P4 round score: 28
+Player: P4 total score: 47
+
+************* G A M E   O V E R ***************
+Player: P1 final score: 43
+Player: P2 final score: 34
+Player: P3 final score: 27
+Player: P4 final score: 47
+
+Process finished with exit code 0
